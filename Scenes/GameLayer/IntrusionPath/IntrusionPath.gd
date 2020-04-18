@@ -14,13 +14,12 @@ onready var sprite_node = $Sprite
 export(NodePath) var target_a_path setget set_target_a_path
 export(NodePath) var target_b_path setget set_target_b_path
 export(int, 0, 1024) var cost: int = 1 setget set_cost
+export(Resource) var occupying_character setget set_occupying_character
 
 var target_a: IntrusionNode
 var target_b: IntrusionNode
 var original_size: Vector2
 var original_length: float
-var owned
-var owning_character
 
 func _process(delta):
 	update_line()
@@ -69,15 +68,13 @@ func update_line() -> void:
 	if original_length != null:
 		sprite_node.scale = ORIGINAL_SCALE * ((delta_vector.length() + LENGTH_OFFSET) / original_length)
 
-func is_route_to(destination:IntrusionNode):
+func is_route_to(destination):
 	if destination == null:
 		return false
 	return target_a == destination or target_b == destination
 
-func connect_intruder(owner:IntrusionCharacter):
-	owned = true
-	owning_character = owner
+func set_occupying_character(character:IntrusionCharacter):
+	occupying_character = character
 
 func disconnect_intruder():
-	owned = false
-	owning_character = null
+	occupying_character = null

@@ -8,7 +8,7 @@ signal mouse_entered
 signal mouse_exited
 
 var occupied
-var occupying_character
+export(Resource) var occupying_character setget set_occupying_character
 var port_route_map = {}
 var key_connected_node_map = {}
 
@@ -18,18 +18,28 @@ func _on_Area2D_mouse_entered():
 
 func _on_Area2D_mouse_exited():
 	emit_signal("mouse_exited")
-	if occupied:
+	if is_occupied():
 		$AnimatedSprite.animation = 'closed'
 	else:
 		$AnimatedSprite.animation = 'none'
 
-func enter_node(character:IntrusionCharacter):
-	occupied = true
+func set_occupying_character(character:IntrusionCharacter):
 	occupying_character = character
-	$AnimatedSprite.animation = 'closed'
+	if is_occupied():
+		$AnimatedSprite.modulate = occupying_character.character_color
+		$AnimatedSprite.animation = 'closed'
+	else:
+		$AnimatedSprite.modulate = Color(1,1,1,1)
+		$AnimatedSprite.animation = 'none'
+		
+
+func is_occupied() -> bool:
+	return is_instance_valid(occupying_character)
+	
+func enter_node(character:IntrusionCharacter):
+	set_occupying_character(character)
 
 func exit_node():
-	occupied = false
 	occupying_character = null
 	$AnimatedSprite.animation = 'none'
 
