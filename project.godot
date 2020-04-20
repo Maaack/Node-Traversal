@@ -29,11 +29,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scenes/GameLayer/IntrusionPath/IntrusionPath.gd"
 }, {
-"base": "Node2D",
-"class": "Level_One",
-"language": "GDScript",
-"path": "res://Scenes/GameLayer/Levels/Level1.gd"
-}, {
 "base": "IntrusionAction",
 "class": "RangedCostAction",
 "language": "GDScript",
@@ -44,7 +39,6 @@ _global_script_class_icons={
 "IntrusionCharacter": "",
 "IntrusionNode": "",
 "IntrusionPath": "",
-"Level_One": "",
 "RangedCostAction": ""
 }
 
