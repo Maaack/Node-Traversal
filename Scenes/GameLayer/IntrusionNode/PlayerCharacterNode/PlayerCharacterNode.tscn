@@ -6,5 +6,6 @@
 [node name="PlayerCharacterNode" instance=ExtResource( 1 )]
 occupying_character = ExtResource( 2 )
 
-[node name="AnimatedSprite" parent="." index="1"]
+[node name="AnimatedRing" parent="." index="1"]
+modulate = Color( 0.576471, 0.996078, 0.196078, 1 )
 animation = "closed"

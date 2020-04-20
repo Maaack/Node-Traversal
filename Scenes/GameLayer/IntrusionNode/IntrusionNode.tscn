@@ -16,11 +16,11 @@ script = ExtResource( 3 )
 [node name="Center" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedRing" type="AnimatedSprite" parent="."]
 frames = ExtResource( 4 )
 animation = "none"
 
-[node name="Ring" type="Sprite" parent="."]
+[node name="OldRing" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 2 )
 

@@ -4,44 +4,50 @@ extends Node2D
 
 class_name IntrusionNode
 
+onready var ring_node = $AnimatedRing
+onready var center_node = $Center
+
 signal mouse_entered
 signal mouse_exited
 
-var occupied
 export(Resource) var occupying_character setget set_occupying_character
+
+var mouse_hovering = false
 var port_route_map = {}
 var key_connected_node_map = {}
 
+func _process(_delta):
+	update_ring()
+
 func _on_Area2D_mouse_entered():
 	emit_signal("mouse_entered")
-	$AnimatedSprite.animation = 'open'
+	mouse_hovering = true
+	update_ring()
 
 func _on_Area2D_mouse_exited():
 	emit_signal("mouse_exited")
-	if is_occupied():
-		$AnimatedSprite.animation = 'closed'
-	else:
-		$AnimatedSprite.animation = 'none'
+	mouse_hovering = false
+	update_ring()
 
 func set_occupying_character(character:IntrusionCharacter):
 	occupying_character = character
+	update_ring()
+
+func update_ring():
+	if ring_node == null:
+		return
 	if is_occupied():
-		$AnimatedSprite.modulate = occupying_character.character_color
-		$AnimatedSprite.animation = 'closed'
+		ring_node.modulate = occupying_character.character_color
+		ring_node.animation = 'closed'
 	else:
-		$AnimatedSprite.modulate = Color(1,1,1,1)
-		$AnimatedSprite.animation = 'none'
-		
+		ring_node.modulate = Color(1,1,1,1)
+		ring_node.animation = 'none'
+	if mouse_hovering:
+		ring_node.animation = 'open'
+
 
 func is_occupied() -> bool:
 	return is_instance_valid(occupying_character)
-	
-func enter_node(character:IntrusionCharacter):
-	set_occupying_character(character)
-
-func exit_node():
-	occupying_character = null
-	$AnimatedSprite.animation = 'none'
 
 func connect_from(target:IntrusionNode, owner:IntrusionCharacter):
 	var route = get_route_to(target)

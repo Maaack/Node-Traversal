@@ -24,20 +24,14 @@ var original_length: float
 func _process(delta):
 	update_line()
 	update_text()
-	
-func set_cost_node(value:Node):
-	cost_node = value
-	update_text()
-
-func set_sprite_node(value:Node):
-	sprite_node = value
-	update_line()
 
 func set_target_a_path(value:NodePath):
+	target_a = null
 	target_a_path = value
 	update_line()
 
 func set_target_b_path(value:NodePath):
+	target_b = null
 	target_b_path = value
 	update_line()
 
@@ -50,8 +44,10 @@ func update_text():
 		cost_node.text = str(cost)
 
 func resolve_paths_to_nodes():
-	target_a = get_node_or_null(target_a_path)
-	target_b = get_node_or_null(target_b_path)
+	if target_a == null and target_a_path != null:
+		target_a = get_node_or_null(target_a_path)
+	if target_b == null and target_b_path != null:
+		target_b = get_node_or_null(target_b_path)
 
 func update_line() -> void:
 	resolve_paths_to_nodes()
@@ -75,6 +71,9 @@ func is_route_to(destination):
 
 func set_occupying_character(character:IntrusionCharacter):
 	occupying_character = character
-
-func disconnect_intruder():
-	occupying_character = null
+	if sprite_node == null:
+		return
+	if occupying_character != null:
+		sprite_node.modulate = character.character_color
+	else:
+		sprite_node.modulate = Color(1,1,1,1)
