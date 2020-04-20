@@ -5,7 +5,9 @@ export(Vector2) var action_box_position_offset = Vector2(0, 120)
 export(Vector2) var action_box_margin = Vector2(128, 48)
 
 var action_box_scene = preload("res://Scenes/GameLayer/UIBox/ActionBox/ActionBoxNode.tscn")
+var player_character_resource = preload("res://Scenes/GameLayer/Character/PlayerCharacter.tres")
 var node_action_box_map = {}
+var highlighted_node
 
 func _ready():
 	for child in $Game/Level1.get_children():
@@ -17,11 +19,23 @@ func _ready():
 			child.connect("mouse_entered", self, "_on_IntrusionNode_mouse_entered")
 			child.connect("mouse_exited", self, "_on_IntrusionNode_mouse_exited")
 
+func _input(event):
+	if event.is_action_pressed("game_trigger_action"):
+		if not is_instance_valid(highlighted_node):
+			return
+		if highlighted_node is IntrusionNode:
+			highlighted_node.occupying_character = player_character_resource
+
 func _on_IntrusionNode_mouse_entered(node:IntrusionNode):
-	if is_instance_valid(node) and node.action != null:
+	if not is_instance_valid(node):
+		return
+	highlighted_node = node
+	if node.action != null:
 		show_action_box(node)
 
 func _on_IntrusionNode_mouse_exited(node:IntrusionNode):
+	if node == highlighted_node:
+		highlighted_node = null
 	if is_instance_valid(node):
 		hide_action_box(node)
 

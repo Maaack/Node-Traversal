@@ -4,5 +4,7 @@
 [ext_resource path="res://Scenes/GameLayer/IntrusionAction/RangedCostAction/Actions/Attack.tres" type="Resource" id=2]
 
 [node name="SecureNode" instance=ExtResource( 1 )]
-modulate = Color( 0.992157, 0.0941176, 0.45098, 1 )
 action = ExtResource( 2 )
+
+[node name="Center" parent="." index="0"]
+modulate = Color( 0.992157, 0.0941176, 0.45098, 1 )
