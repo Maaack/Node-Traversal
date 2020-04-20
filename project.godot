@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Resource",
+"class": "IntrusionAction",
+"language": "GDScript",
+"path": "res://Scenes/GameLayer/IntrusionAction/IntrusionAction.gd"
+}, {
+"base": "Resource",
 "class": "IntrusionCharacter",
 "language": "GDScript",
 "path": "res://Scenes/GameLayer/Character/Character.gd"
@@ -28,12 +33,19 @@ _global_script_classes=[ {
 "class": "Level_One",
 "language": "GDScript",
 "path": "res://Scenes/GameLayer/Levels/Level1.gd"
+}, {
+"base": "IntrusionAction",
+"class": "RangedCostAction",
+"language": "GDScript",
+"path": "res://Scenes/GameLayer/IntrusionAction/RangedCostAction/RangedCostAction.gd"
 } ]
 _global_script_class_icons={
+"IntrusionAction": "",
 "IntrusionCharacter": "",
 "IntrusionNode": "",
 "IntrusionPath": "",
-"Level_One": ""
+"Level_One": "",
+"RangedCostAction": ""
 }
 
 [application]

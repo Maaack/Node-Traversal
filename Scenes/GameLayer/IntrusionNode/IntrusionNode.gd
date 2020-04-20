@@ -11,7 +11,7 @@ signal mouse_entered
 signal mouse_exited
 
 export(Resource) var occupying_character setget set_occupying_character
-export(String) var action_text
+export(Resource) var action
 
 var mouse_hovering = false
 var port_route_map = {}

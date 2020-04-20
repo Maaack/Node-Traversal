@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/GameLayer/IntrusionAction/RangedCostAction/RangedCostAction.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+text = "Attack"
+cost = 10
+max_cost = 10
+min_cost = 2
+average_cost = 4.0
