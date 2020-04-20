@@ -11,6 +11,7 @@ signal mouse_entered
 signal mouse_exited
 
 export(Resource) var occupying_character setget set_occupying_character
+export(String) var action_text
 
 var mouse_hovering = false
 var port_route_map = {}
@@ -20,12 +21,12 @@ func _process(_delta):
 	update_ring()
 
 func _on_Area2D_mouse_entered():
-	emit_signal("mouse_entered")
+	emit_signal("mouse_entered", self)
 	mouse_hovering = true
 	update_ring()
 
 func _on_Area2D_mouse_exited():
-	emit_signal("mouse_exited")
+	emit_signal("mouse_exited", self)
 	mouse_hovering = false
 	update_ring()
 

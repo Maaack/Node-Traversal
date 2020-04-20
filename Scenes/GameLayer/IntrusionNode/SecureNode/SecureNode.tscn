@@ -4,3 +4,4 @@
 
 [node name="SecureNode" instance=ExtResource( 1 )]
 modulate = Color( 0.992157, 0.0941176, 0.45098, 1 )
+action_text = "Attack"

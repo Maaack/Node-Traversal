@@ -4,3 +4,4 @@
 
 [node name="OpenNode" instance=ExtResource( 1 )]
 modulate = Color( 0, 0.952941, 1, 1 )
+action_text = "Connect"
