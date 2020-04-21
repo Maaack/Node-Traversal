@@ -4,5 +4,6 @@
 
 [resource]
 script = ExtResource( 1 )
-character_name = "Player"
-character_color = Color( 0.576471, 0.996078, 0.196078, 1 )
+intrusion_id = 0
+intrusion_name = "Player"
+color = Color( 0.576471, 0.996078, 0.196078, 1 )

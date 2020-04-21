@@ -24,7 +24,7 @@ func _input(event):
 		if not is_instance_valid(highlighted_node):
 			return
 		if highlighted_node is IntrusionNode:
-			highlighted_node.occupying_character = player_character_resource
+			highlighted_node.connect_character(player_character_resource)
 
 func _on_IntrusionNode_mouse_entered(node:IntrusionNode):
 	if not is_instance_valid(node):

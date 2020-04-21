@@ -37,7 +37,7 @@ func update_ring():
 	if ring_node == null:
 		return
 	if is_occupied():
-		ring_node.modulate = occupying_character.character_color
+		ring_node.modulate = occupying_character.color
 		ring_node.animation = 'closed'
 	else:
 		ring_node.modulate = Color(1,1,1,1)
@@ -47,6 +47,18 @@ func update_ring():
 
 func is_occupied() -> bool:
 	return is_instance_valid(occupying_character)
+
+func connect_character(character:IntrusionCharacter):
+	if can_connect_character(character):
+		set_occupying_character(character)
+
+func can_connect_character(character:IntrusionCharacter):
+	for connected_node in connected_nodes:
+		if connected_node.occupying_character == null:
+			continue
+		if connected_node.occupying_character.intrusion_id == character.intrusion_id:
+			return true
+	return false
 
 func connect_node(node:IntrusionNode):
 	if connected_nodes.has(node):
