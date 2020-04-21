@@ -26,13 +26,17 @@ func _process(delta):
 	update_text()
 
 func set_target_a_path(value:NodePath):
+	disconnect_nodes()
 	target_a = null
 	target_a_path = value
+	connect_nodes()
 	update_line()
 
 func set_target_b_path(value:NodePath):
+	disconnect_nodes()
 	target_b = null
 	target_b_path = value
+	connect_nodes()
 	update_line()
 
 func set_cost(value:int):
@@ -51,6 +55,10 @@ func resolve_paths_to_nodes():
 
 func update_line() -> void:
 	resolve_paths_to_nodes()
+	update_occupying_character()
+	update_line_position_and_scale()
+
+func update_line_position_and_scale() -> void:
 	if target_a == null or target_b == null:
 		return
 	if not is_instance_valid(sprite_node):
@@ -64,10 +72,30 @@ func update_line() -> void:
 	if original_length != null:
 		sprite_node.scale = ORIGINAL_SCALE * ((delta_vector.length() + LENGTH_OFFSET) / original_length)
 
+func disconnect_nodes() -> void:
+	if target_a == null or target_b == null:
+		return
+	target_a.disconnect_node(target_b)
+	target_b.disconnect_node(target_a)
+
+func connect_nodes() -> void:
+	if target_a == null or target_b == null:
+		return
+	target_a.connect_node(target_b)
+	target_b.connect_node(target_a)
+	
 func is_route_to(destination):
 	if destination == null:
 		return false
 	return target_a == destination or target_b == destination
+
+func update_occupying_character() -> void:
+	if target_a == null or target_b == null:
+		return
+	if target_a.occupying_character == target_b.occupying_character:
+		set_occupying_character(target_a.occupying_character)
+	else:
+		set_occupying_character(null)
 
 func set_occupying_character(character:IntrusionCharacter):
 	occupying_character = character

@@ -14,8 +14,7 @@ export(Resource) var occupying_character setget set_occupying_character
 export(Resource) var action
 
 var mouse_hovering = false
-var port_route_map = {}
-var key_connected_node_map = {}
+var connected_nodes = []
 
 func _process(_delta):
 	update_ring()
@@ -46,25 +45,16 @@ func update_ring():
 	if mouse_hovering:
 		ring_node.animation = 'open'
 
-
 func is_occupied() -> bool:
 	return is_instance_valid(occupying_character)
 
-func connect_from(target:IntrusionNode, owner:IntrusionCharacter):
-	var route = get_route_to(target)
-	if route == null:
+func connect_node(node:IntrusionNode):
+	if connected_nodes.has(node):
 		return
-	var node_key = target.get_instance_id()
-	if key_connected_node_map.has(node_key):
-		return true
-	route.connect_intruder(owner)
-	key_connected_node_map[node_key] = target
-	return true
+	connected_nodes.append(node)
 
-func get_route_to(target:IntrusionNode):
-	for port_key in port_route_map:
-		var route = port_route_map[port_key]
-		if not is_instance_valid(route):
-			continue
-		if route.has_method("is_route_to") and route.is_route_to(target):
-			return route
+func disconnect_node(node:IntrusionNode):
+	var index = connected_nodes.find(node)
+	if index >= 0:
+		connected_nodes.remove(index)
+		
