@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "IntrusionNode",
+"class": "DestinationNode",
+"language": "GDScript",
+"path": "res://Scenes/GameLayer/IntrusionNode/DestinationNode/DestinationNode.gd"
+}, {
 "base": "Resource",
 "class": "IntrusionAction",
 "language": "GDScript",
@@ -18,6 +23,11 @@ _global_script_classes=[ {
 "class": "IntrusionCharacter",
 "language": "GDScript",
 "path": "res://Scenes/GameLayer/Character/Character.gd"
+}, {
+"base": "Node2D",
+"class": "IntrusionLevel",
+"language": "GDScript",
+"path": "res://Scenes/GameLayer/IntrusionLevels/IntrusionLevel.gd"
 }, {
 "base": "Node2D",
 "class": "IntrusionNode",
@@ -33,13 +43,21 @@ _global_script_classes=[ {
 "class": "RangedCostAction",
 "language": "GDScript",
 "path": "res://Scenes/GameLayer/IntrusionAction/RangedCostAction/RangedCostAction.gd"
+}, {
+"base": "IntrusionPath",
+"class": "WeightedPath",
+"language": "GDScript",
+"path": "res://Scenes/GameLayer/IntrusionPath/WeightedPath/WeightedPath.gd"
 } ]
 _global_script_class_icons={
+"DestinationNode": "",
 "IntrusionAction": "",
 "IntrusionCharacter": "",
+"IntrusionLevel": "",
 "IntrusionNode": "",
 "IntrusionPath": "",
-"RangedCostAction": ""
+"RangedCostAction": "",
+"WeightedPath": ""
 }
 
 [application]

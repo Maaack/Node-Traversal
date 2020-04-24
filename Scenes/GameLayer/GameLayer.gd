@@ -1,74 +1,42 @@
 extends Control
 
 
-export(Vector2) var action_box_position_offset = Vector2(0, 120)
-export(Vector2) var action_box_margin = Vector2(128, 48)
+onready var camera_node = $Game/Camera2D
+onready var game_node = $Game
 
-var action_box_scene = preload("res://Scenes/GameLayer/UIBox/ActionBox/ActionBoxNode.tscn")
-var player_character_resource = preload("res://Scenes/GameLayer/Character/PlayerCharacter.tres")
-var node_action_box_map = {}
-var highlighted_node
+export(int, 0, 1024) var starting_level_index = 0
+
+var levels = {}
+var current_level_index
+var current_level_node
 
 func _ready():
-	for child in $Game/Level1.get_children():
-		if not is_instance_valid(child):
-			continue
-		if not child is Node:
-			continue
-		if child.is_in_group('NODE'):
-			child.connect("mouse_entered", self, "_on_IntrusionNode_mouse_entered")
-			child.connect("mouse_exited", self, "_on_IntrusionNode_mouse_exited")
+	var level_index = 0
+	for game_child in game_node.get_children():
+		if game_child.is_in_group('LEVEL'):
+			levels[level_index] = game_child
+			level_index += 1
+			game_child.connect("destination_reached", self, "_on_Level_destination_reached")
+			
+	_start_first_level()
 
-func _input(event):
-	if event.is_action_pressed("game_trigger_action"):
-		if not is_instance_valid(highlighted_node):
-			return
-		if highlighted_node is IntrusionNode:
-			highlighted_node.connect_character(player_character_resource)
+func _on_Level_destination_reached(level:IntrusionLevel):
+		_transition_to_next_level()
 
-func _on_IntrusionNode_mouse_entered(node:IntrusionNode):
-	if not is_instance_valid(node):
+func _transition_to_next_level():
+	set_current_level_index(current_level_index + 1)
+
+func _start_first_level():
+	set_current_level_index(starting_level_index)
+
+func set_current_level_index(index:int):
+	current_level_index = index
+	if current_level_index == null or current_level_index < 0:
 		return
-	highlighted_node = node
-	if node.action != null:
-		show_action_box(node)
+	_set_current_level_from_index()
 
-func _on_IntrusionNode_mouse_exited(node:IntrusionNode):
-	if node == highlighted_node:
-		highlighted_node = null
-	if is_instance_valid(node):
-		hide_action_box(node)
-
-func show_action_box(node:IntrusionNode):
-	var key = node.get_instance_id()
-	var action_box
-	if node_action_box_map.has(key):
-		action_box = node_action_box_map[key]
-		action_box.show()
-	else:
-		action_box = action_box_scene.instance()
-		add_child(action_box)
-		action_box.position = node.position + action_box_position_offset
-		action_box.position = move_inside_action_box_margin(action_box.position)
-		action_box.intrusion_node = node
-		node_action_box_map[key] = action_box
-	return action_box
-
-func move_inside_action_box_margin(position:Vector2):
-	var size = get_rect().size
-	if position.x < action_box_margin.x:
-		position.x = action_box_margin.x
-	if position.x > size.x - action_box_margin.x:
-		position.x = size.x - action_box_margin.x
-	if position.y < action_box_margin.y:
-		position.y = action_box_margin.y
-	if position.y > size.y - action_box_margin.y:
-		position.y = size.y - action_box_margin.y
-	return position
-
-func hide_action_box(node:IntrusionNode):
-	var key = node.get_instance_id()
-	var action_box
-	if node_action_box_map.has(key):
-		action_box = node_action_box_map[key]
-		action_box.hide()
+func _set_current_level_from_index():
+	if levels.has(current_level_index):
+		current_level_node = levels[current_level_index]
+		camera_node.global_position = current_level_node.camera_node.global_position
+		camera_node.scale = current_level_node.camera_node.scale

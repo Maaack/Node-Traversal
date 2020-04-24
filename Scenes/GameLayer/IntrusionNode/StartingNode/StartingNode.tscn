@@ -3,11 +3,11 @@
 [ext_resource path="res://Scenes/GameLayer/IntrusionNode/IntrusionNode.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/GameLayer/Character/PlayerCharacter.tres" type="Resource" id=2]
 
-[node name="PlayerCharacterNode" instance=ExtResource( 1 )]
+[node name="StartingNode" instance=ExtResource( 1 )]
 occupying_character = ExtResource( 2 )
 
 [node name="Center" parent="." index="0"]
-modulate = Color( 0.576471, 0.996078, 0.196078, 1 )
+modulate = Color( 0, 0.952941, 1, 1 )
 
 [node name="AnimatedRing" parent="." index="1"]
 modulate = Color( 0.576471, 0.996078, 0.196078, 1 )

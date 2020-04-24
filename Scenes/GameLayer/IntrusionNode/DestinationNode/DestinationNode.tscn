@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/GameLayer/IntrusionNode/IntrusionNode.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/GameLayer/IntrusionAction/Actions/Connect.tres" type="Resource" id=2]
+[ext_resource path="res://Scenes/GameLayer/IntrusionNode/DestinationNode/DestinationNode.gd" type="Script" id=3]
+
+[node name="DestinationNode" groups=[
+"DESTINATION",
+] instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+action = ExtResource( 2 )
+
+[node name="Center" parent="." index="0"]
+modulate = Color( 0.576471, 0.996078, 0.196078, 1 )
