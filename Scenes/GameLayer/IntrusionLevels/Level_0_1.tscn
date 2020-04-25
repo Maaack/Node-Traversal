@@ -12,14 +12,11 @@ position = Vector2( 512, 480 )
 [node name="OpenNode2" parent="." index="2" instance=ExtResource( 2 )]
 position = Vector2( 512, 120 )
 
-[node name="IntrusionPath" parent="." index="4"]
+[node name="IntrusionPath2" parent="." index="4"]
 position = Vector2( 300, 390 )
-target_a_path = NodePath("../StartingNode")
-target_b_path = NodePath("../OpenNode")
 
-[node name="IntrusionPath2" parent="." index="5"]
+[node name="IntrusionPath" parent="." index="5"]
 position = Vector2( 512, 300 )
-target_a_path = NodePath("../OpenNode")
 target_b_path = NodePath("../OpenNode2")
 
 [node name="IntrusionPath3" parent="." index="6" instance=ExtResource( 1 )]

@@ -7,52 +7,37 @@
 [node name="Level_0_6" instance=ExtResource( 1 )]
 
 [node name="OpenNode5" parent="." index="5"]
-position = Vector2( 340, 300 )
+position = Vector2( 344, 300 )
 
 [node name="OpenNode6" parent="." index="6" instance=ExtResource( 2 )]
 position = Vector2( 680, 296 )
 
-[node name="IntrusionPath" parent="." index="8"]
-position = Vector2( 216, 382 )
-target_a_path = NodePath("../../Level_0_6/StartingNode")
-target_b_path = NodePath("../../Level_0_6/OpenNode")
-
-[node name="IntrusionPath2" parent="." index="9"]
+[node name="IntrusionPath2" parent="." index="8"]
 position = Vector2( 808, 382 )
 target_a_path = NodePath("../OpenNode2")
 target_b_path = NodePath("../DestinationNode")
 
 [node name="IntrusionPath3" parent="." index="10"]
-position = Vector2( 342, 382 )
-target_a_path = NodePath("../../Level_0_6/OpenNode")
-target_b_path = NodePath("../../Level_0_6/OpenNode5")
-
-[node name="IntrusionPath4" parent="." index="11"]
-position = Vector2( 216, 218 )
-target_a_path = NodePath("../StartingNode")
-target_b_path = NodePath("../OpenNode3")
+position = Vector2( 344, 382 )
+target_b_path = NodePath("../OpenNode5")
 
 [node name="IntrusionPath5" parent="." index="12"]
-position = Vector2( 510, 382 )
-target_a_path = NodePath("../OpenNode2")
-target_b_path = NodePath("../../Level_0_6/OpenNode5")
+position = Vector2( 216, 300 )
 
 [node name="IntrusionPath6" parent="." index="13"]
-position = Vector2( 512, 136 )
-target_a_path = NodePath("../../Level_0_6/OpenNode4")
-target_b_path = NodePath("../OpenNode3")
-
-[node name="IntrusionPath7" parent="." index="14"]
-position = Vector2( 808, 298 )
-target_a_path = NodePath("../OpenNode6")
+position = Vector2( 808, 218 )
 target_b_path = NodePath("../DestinationNode")
 
+[node name="IntrusionPath7" parent="." index="14"]
+position = Vector2( 512, 300 )
+target_a_path = NodePath("../OpenNode3")
+target_b_path = NodePath("../OpenNode2")
+
 [node name="IntrusionPath8" parent="." index="15"]
-position = Vector2( 342, 218 )
-target_a_path = NodePath("../../Level_0_6/OpenNode3")
-target_b_path = NodePath("../../Level_0_6/OpenNode5")
+position = Vector2( 512, 298 )
+target_a_path = NodePath("../OpenNode6")
 
 [node name="IntrusionPath9" parent="." index="16" instance=ExtResource( 3 )]
-position = Vector2( 512, 216 )
-target_a_path = NodePath("../OpenNode3")
+position = Vector2( 512, 380 )
+target_a_path = NodePath("../OpenNode")
 target_b_path = NodePath("../OpenNode6")
