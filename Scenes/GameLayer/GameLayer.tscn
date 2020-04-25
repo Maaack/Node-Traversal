@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Level_0_0.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/GameLayer/GameLayer.gd" type="Script" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Level_0_2.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Level_0_3.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Level_0_4.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/IntrusionLevel.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Level_0_5.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Level_0_6.tscn" type="PackedScene" id=12]
 
@@ -38,11 +37,8 @@ centered = false
 [node name="Level_0_1" parent="Game" instance=ExtResource( 6 )]
 position = Vector2( 1152, 0 )
 
-[node name="Level_0_2" parent="Game" groups=[
-"LEVEL",
-] instance=ExtResource( 7 )]
+[node name="Level_0_2" parent="Game" instance=ExtResource( 7 )]
 position = Vector2( 2304, 0 )
-script = ExtResource( 10 )
 
 [node name="Level_0_3" parent="Game" instance=ExtResource( 8 )]
 position = Vector2( 3456, 0 )
@@ -53,11 +49,8 @@ position = Vector2( 4608, 0 )
 [node name="Level_0_5" parent="Game" instance=ExtResource( 11 )]
 position = Vector2( 5760, 0 )
 
-[node name="Level_0_6" parent="Game" groups=[
-"LEVEL",
-] instance=ExtResource( 12 )]
+[node name="Level_0_6" parent="Game" instance=ExtResource( 12 )]
 position = Vector2( 6912, 0 )
-script = ExtResource( 10 )
 
 [node name="Level_1_1" parent="Game" instance=ExtResource( 5 )]
 position = Vector2( 0, 1024 )

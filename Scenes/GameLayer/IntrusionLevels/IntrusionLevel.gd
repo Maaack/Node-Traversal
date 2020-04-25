@@ -15,6 +15,7 @@ var action_box_scene = preload("res://Scenes/GameLayer/UIBox/ActionBox/ActionBox
 var player_character = preload("res://Scenes/GameLayer/Character/PlayerCharacter.tres")
 var node_action_box_map = {}
 var highlighted_node
+var ignore_input : bool = false
 
 func _ready():
 	for level_child in get_children():
@@ -28,12 +29,19 @@ func _ready():
 			if level_child.is_in_group('DESTINATION'):
 				level_child.connect("destination_reached", self, "_on_DestinationNode_destination_reached")
 
-func _input(event):
+func _unhandled_input(event):
+	if ignore_input:
+		return
+	_handle_input_event(event)
+
+func _handle_input_event(event:InputEvent):
 	if event.is_action_pressed("game_trigger_action"):
 		if not is_instance_valid(highlighted_node):
 			return
 		if highlighted_node is IntrusionNode:
 			highlighted_node.connect_character(player_character)
+	elif event.is_action_pressed("game_reset_action"):
+		_reset_level()
 
 func _on_IntrusionNode_mouse_entered(node:IntrusionNode):
 	if not is_instance_valid(node):
@@ -49,10 +57,22 @@ func _on_IntrusionNode_mouse_exited(node:IntrusionNode):
 		hide_action_box(node)
 
 func _on_DestinationNode_destination_reached(character:IntrusionCharacter, node:IntrusionNode):
+	if character == null:
+		return
 	if character.intrusion_id == player_character.intrusion_id:
 		if destination_path_node != null:
 			destination_path_node.modulate = character.color
 		emit_signal("destination_reached", self)
+
+func _reset_level():
+	for level_child in get_children():
+		if level_child.is_in_group('START'):
+			continue
+		if level_child is IntrusionNode:
+			level_child.occupying_character = null
+
+func game_input(event):
+	_handle_input_event(event)
 
 func show_action_box(node:IntrusionNode):
 	var key = node.get_instance_id()
