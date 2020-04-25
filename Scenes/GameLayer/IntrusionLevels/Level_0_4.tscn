@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Level_0_3.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/GameLayer/IntrusionNode/OpenNode/OpenNode.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/GameLayer/IntrusionPath/IntrusionPath.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/IntrusionLevel.gd" type="Script" id=4]
+
+[node name="Level_0_4" groups=[
+"LEVEL",
+] instance=ExtResource( 1 )]
+script = ExtResource( 4 )
+
+[node name="OpenNode5" parent="." index="5" instance=ExtResource( 2 )]
+position = Vector2( 512, 300 )
+
+[node name="IntrusionPath" parent="." index="7"]
+target_a_path = NodePath("../../Level_0_4/StartingNode")
+target_b_path = NodePath("../../Level_0_4/OpenNode")
+
+[node name="IntrusionPath2" parent="." index="8"]
+target_a_path = NodePath("../../Level_0_4/OpenNode")
+target_b_path = NodePath("../../Level_0_4/OpenNode2")
+
+[node name="IntrusionPath3" parent="." index="9"]
+position = Vector2( 512, 136 )
+target_a_path = NodePath("../../Level_0_4/OpenNode3")
+target_b_path = NodePath("../OpenNode4")
+
+[node name="IntrusionPath4" parent="." index="10"]
+target_a_path = NodePath("../StartingNode")
+target_b_path = NodePath("../OpenNode3")
+
+[node name="IntrusionPath5" parent="." index="11"]
+position = Vector2( 596, 382 )
+target_a_path = NodePath("../OpenNode2")
+target_b_path = NodePath("../OpenNode5")
+
+[node name="IntrusionPath6" parent="." index="12"]
+position = Vector2( 680, 300 )
+target_a_path = NodePath("../../Level_0_4/OpenNode4")
+target_b_path = NodePath("../OpenNode2")
+
+[node name="IntrusionPath7" parent="." index="13" instance=ExtResource( 3 )]
+position = Vector2( 724, 300 )
+target_a_path = NodePath("../OpenNode5")
+target_b_path = NodePath("../DestinationNode")

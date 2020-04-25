@@ -8,12 +8,10 @@ const ORIENTATION_VECTOR = Vector2(0.0, -1.0)
 const ORIGINAL_SCALE = Vector2(1.0, 1.0)
 const LENGTH_OFFSET = -128
 
-onready var cost_node = $Cost
 onready var sprite_node = $Sprite
 
 export(NodePath) var target_a_path setget set_target_a_path
 export(NodePath) var target_b_path setget set_target_b_path
-export(int, 0, 1024) var cost: int = 1 setget set_cost
 export(Resource) var occupying_character setget set_occupying_character
 
 var target_a: IntrusionNode
@@ -23,7 +21,6 @@ var original_length: float
 
 func _process(delta):
 	update_line()
-	update_text()
 
 func set_target_a_path(value:NodePath):
 	target_a_path = value
@@ -34,14 +31,6 @@ func set_target_b_path(value:NodePath):
 	target_b_path = value
 	target_b = get_node_or_null(target_b_path)
 	connect_nodes()
-
-func set_cost(value:int):
-	cost = value
-	update_text()
-
-func update_text():
-	if cost != null and is_instance_valid(cost_node):
-		cost_node.text = str(cost)
 
 func resolve_paths_to_nodes():
 	if target_a == null or target_b == null:
@@ -68,7 +57,7 @@ func update_line_position_and_scale() -> void:
 	original_size = sprite_node.texture.get_size()
 	original_length = max(original_size.x, original_size.y)
 	if original_length != null:
-		sprite_node.scale = ORIGINAL_SCALE * ((delta_vector.length() + LENGTH_OFFSET) / original_length)
+		sprite_node.scale.y = ORIGINAL_SCALE.y * ((delta_vector.length() + LENGTH_OFFSET) / original_length)
 
 func disconnect_nodes() -> void:
 	if target_a == null or target_b == null:

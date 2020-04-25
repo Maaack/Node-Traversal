@@ -6,6 +6,7 @@ class_name IntrusionLevel
 signal destination_reached
 
 onready var camera_node = $Camera2D
+onready var destination_path_node = $DestinationPath
 
 export(Vector2) var action_box_position_offset = Vector2(0, 120)
 export(Vector2) var action_box_margin = Vector2(128, 48)
@@ -49,6 +50,8 @@ func _on_IntrusionNode_mouse_exited(node:IntrusionNode):
 
 func _on_DestinationNode_destination_reached(character:IntrusionCharacter, node:IntrusionNode):
 	if character.intrusion_id == player_character.intrusion_id:
+		if destination_path_node != null:
+			destination_path_node.modulate = character.color
 		emit_signal("destination_reached", self)
 
 func show_action_box(node:IntrusionNode):

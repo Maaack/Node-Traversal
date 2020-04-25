@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Level_0_0.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/GameLayer/GameLayer.gd" type="Script" id=2]
@@ -6,6 +6,12 @@
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Level_1_2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Level_1_1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Level_0_1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Level_0_2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Level_0_3.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Level_0_4.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/IntrusionLevel.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Level_0_5.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Level_0_6.tscn" type="PackedScene" id=12]
 
 [node name="GameLayer" type="Control"]
 anchor_right = 1.0
@@ -19,25 +25,45 @@ __meta__ = {
 [node name="Game" type="Node2D" parent="."]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Game"]
-scroll_base_scale = Vector2( 0.01, 0.01 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Game/ParallaxBackground"]
+motion_scale = Vector2( 0.015, 0.015 )
 
 [node name="Sprite" type="Sprite" parent="Game/ParallaxBackground/ParallaxLayer"]
 texture = ExtResource( 3 )
 centered = false
 
 [node name="Level_0_0" parent="Game" instance=ExtResource( 1 )]
-position = Vector2( -4.81451, 2.09894 )
 
 [node name="Level_0_1" parent="Game" instance=ExtResource( 6 )]
-position = Vector2( 1024, 0 )
+position = Vector2( 1152, 0 )
+
+[node name="Level_0_2" parent="Game" groups=[
+"LEVEL",
+] instance=ExtResource( 7 )]
+position = Vector2( 2304, 0 )
+script = ExtResource( 10 )
+
+[node name="Level_0_3" parent="Game" instance=ExtResource( 8 )]
+position = Vector2( 3456, 0 )
+
+[node name="Level_0_4" parent="Game" instance=ExtResource( 9 )]
+position = Vector2( 4608, 0 )
+
+[node name="Level_0_5" parent="Game" instance=ExtResource( 11 )]
+position = Vector2( 5760, 0 )
+
+[node name="Level_0_6" parent="Game" groups=[
+"LEVEL",
+] instance=ExtResource( 12 )]
+position = Vector2( 6912, 0 )
+script = ExtResource( 10 )
 
 [node name="Level_1_1" parent="Game" instance=ExtResource( 5 )]
-position = Vector2( 2048, 0 )
+position = Vector2( 0, 1024 )
 
 [node name="Level_1_2" parent="Game" instance=ExtResource( 4 )]
-position = Vector2( 3072, 0 )
+position = Vector2( 1024, 1024 )
 
 [node name="Camera2D" type="Camera2D" parent="Game"]
 anchor_mode = 0

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Level_0_2.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/GameLayer/IntrusionPath/IntrusionPath.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/IntrusionLevel.gd" type="Script" id=3]
+
+[node name="Level_0_3" groups=[
+"LEVEL",
+] instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="IntrusionPath3" parent="." index="8"]
+position = Vector2( 512, 300 )
+target_a_path = NodePath("../OpenNode3")
+target_b_path = NodePath("../OpenNode2")
+
+[node name="IntrusionPath4" parent="." index="9"]
+target_a_path = NodePath("../../Level_0_3/StartingNode")
+target_b_path = NodePath("../../Level_0_3/OpenNode3")
+
+[node name="IntrusionPath5" parent="." index="10"]
+target_a_path = NodePath("../../Level_0_3/OpenNode3")
+target_b_path = NodePath("../../Level_0_3/OpenNode4")
+
+[node name="IntrusionPath6" parent="." index="11" instance=ExtResource( 2 )]
+position = Vector2( 808, 218 )
+target_a_path = NodePath("../OpenNode4")
+target_b_path = NodePath("../DestinationNode")
