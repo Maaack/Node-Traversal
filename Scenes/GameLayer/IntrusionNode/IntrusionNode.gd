@@ -48,9 +48,11 @@ func update_ring():
 func is_occupied() -> bool:
 	return is_instance_valid(occupying_character)
 
-func connect_character(character:IntrusionCharacter):
+func connect_character(character:IntrusionCharacter) -> bool :
 	if can_connect_character(character):
 		set_occupying_character(character)
+		return true
+	return false
 
 func can_connect_character(character:IntrusionCharacter):
 	for connected_node in connected_nodes:

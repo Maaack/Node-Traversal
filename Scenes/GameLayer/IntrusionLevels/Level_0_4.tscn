@@ -5,9 +5,13 @@
 [ext_resource path="res://Scenes/GameLayer/IntrusionPath/IntrusionPath.tscn" type="PackedScene" id=3]
 
 [node name="Level_0_4" instance=ExtResource( 1 )]
+starting_unlocks = 4
 
 [node name="OpenNode5" parent="." index="5" instance=ExtResource( 2 )]
 position = Vector2( 512, 300 )
+
+[node name="IntrusionPath" parent="." index="8"]
+target_b_path = NodePath("../OpenNode2")
 
 [node name="IntrusionPath3" parent="." index="9"]
 position = Vector2( 512, 136 )
@@ -27,3 +31,6 @@ target_b_path = NodePath("../OpenNode2")
 position = Vector2( 724, 300 )
 target_a_path = NodePath("../OpenNode5")
 target_b_path = NodePath("../DestinationNode")
+
+[node name="UnlocksCount" parent="ToolsNode/BasicUnlocks" index="1"]
+text = "4 / 4"

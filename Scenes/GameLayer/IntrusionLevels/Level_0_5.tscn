@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Level_0_4.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/GameLayer/IntrusionPath/IntrusionPath.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Themes/StandardFontTheme.tres" type="Theme" id=3]
 
 [node name="Level_0_5" instance=ExtResource( 1 )]
+starting_unlocks = 3
 
 [node name="IntrusionPath2" parent="." index="7"]
 position = Vector2( 512, 464 )
@@ -36,3 +38,13 @@ target_a_path = NodePath("../OpenNode4")
 position = Vector2( 428, 218 )
 target_a_path = NodePath("../OpenNode3")
 target_b_path = NodePath("../OpenNode5")
+
+[node name="UnlocksCount" parent="ToolsNode/BasicUnlocks" index="1"]
+margin_left = 24.0
+margin_top = -8.0
+margin_right = 70.0
+margin_bottom = 12.0
+theme = ExtResource( 3 )
+text = "3 / 3"
+align = 1
+valign = 1

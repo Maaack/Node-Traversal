@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/GameLayer/IntrusionNode/OpenNode/OpenNode.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/GameLayer/IntrusionNode/StartingNode/StartingNode.tscn" type="PackedScene" id=2]
@@ -6,15 +6,15 @@
 [ext_resource path="res://Scenes/GameLayer/IntrusionNode/DestinationNode/DestinationNode.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/IntrusionLevel.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/GameLayer/BasicPath/BasicPath.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Themes/StandardFontTheme.tres" type="Theme" id=7]
+[ext_resource path="res://Assets/Originals/NodeCircle.png" type="Texture" id=8]
 
 [node name="Level_0_0" type="Node2D" groups=[
 "LEVEL",
 ]]
 script = ExtResource( 5 )
 
-[node name="StartingNode" parent="." groups=[
-"START",
-] instance=ExtResource( 2 )]
+[node name="StartingNode" parent="." instance=ExtResource( 2 )]
 position = Vector2( 88, 300 )
 
 [node name="OpenNode" parent="." instance=ExtResource( 1 )]
@@ -41,3 +41,45 @@ scale = Vector2( 2.5, 1.4 )
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 current = true
+
+[node name="InstructionsNode" type="Node2D" parent="."]
+position = Vector2( 24, 24 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ResetInstructions" type="Label" parent="InstructionsNode"]
+margin_right = 181.0
+margin_bottom = 20.0
+theme = ExtResource( 7 )
+text = "Press R to reset"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ToolsNode" type="Node2D" parent="."]
+position = Vector2( 1000, 24 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BasicUnlocks" type="Node2D" parent="ToolsNode"]
+position = Vector2( -80, 8 )
+
+[node name="Sprite" type="Sprite" parent="ToolsNode/BasicUnlocks"]
+modulate = Color( 0, 0.952941, 1, 1 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="UnlocksCount" type="Label" parent="ToolsNode/BasicUnlocks"]
+margin_left = 24.0
+margin_top = -8.0
+margin_right = 70.0
+margin_bottom = 12.0
+theme = ExtResource( 7 )
+text = "2 / 2"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

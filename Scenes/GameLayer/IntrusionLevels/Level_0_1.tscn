@@ -5,6 +5,7 @@
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Level_0_0.tscn" type="PackedScene" id=3]
 
 [node name="Level_0_1" instance=ExtResource( 3 )]
+starting_unlocks = 3
 
 [node name="OpenNode" parent="." index="1"]
 position = Vector2( 512, 480 )
@@ -23,3 +24,6 @@ target_b_path = NodePath("../OpenNode2")
 position = Vector2( 724, 210 )
 target_a_path = NodePath("../OpenNode2")
 target_b_path = NodePath("../DestinationNode")
+
+[node name="UnlocksCount" parent="ToolsNode/BasicUnlocks" index="1"]
+text = "3 / 3"
