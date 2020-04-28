@@ -70,12 +70,15 @@ func _on_DestinationNode_destination_reached(character:IntrusionCharacter, _node
 			destination_path_node.modulate = character.color
 		emit_signal("destination_reached", self)
 
-func _reset_level():
+func _reset_player():
 	for level_child in get_children():
 		if level_child.is_in_group('START'):
 			continue
 		if level_child is IntrusionNode:
 			level_child.occupying_character = null
+
+func _reset_level():
+	_reset_player()
 
 func game_input(event):
 	_handle_input_event(event)

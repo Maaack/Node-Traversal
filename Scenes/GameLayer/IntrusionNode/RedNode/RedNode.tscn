@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/GameLayer/IntrusionAction/RangedCostAction/Actions/Attack.tres" type="Resource" id=1]
+[ext_resource path="res://Scenes/GameLayer/IntrusionNode/IntrusionNode.tscn" type="PackedScene" id=2]
+
+[node name="RedNode" groups=[
+"RED_NODE",
+] instance=ExtResource( 2 )]
+action = ExtResource( 1 )
+
+[node name="Center" parent="." index="0"]
+modulate = Color( 0.945098, 0.239216, 0.486275, 1 )

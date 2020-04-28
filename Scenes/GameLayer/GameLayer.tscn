@@ -1,14 +1,18 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_0.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/GameLayer/GameLayer.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Originals/Background.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_0.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_1.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_2.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_3.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_4.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_2.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_5.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_6.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_0.gd" type="Script" id=13]
 
 [node name="GameLayer" type="Control"]
 anchor_right = 1.0
@@ -18,6 +22,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+starting_level_index = 7
 
 [node name="Game" type="Node2D" parent="."]
 
@@ -49,6 +54,18 @@ position = Vector2( 5760, 0 )
 
 [node name="Level_0_6" parent="Game" instance=ExtResource( 12 )]
 position = Vector2( 6912, 0 )
+
+[node name="Level_1_0" parent="Game" instance=ExtResource( 4 )]
+position = Vector2( 0, 864 )
+
+[node name="Level_1_1" parent="Game" groups=[
+"LEVEL",
+] instance=ExtResource( 5 )]
+position = Vector2( 1152, 864 )
+
+[node name="Level_1_2" parent="Game" instance=ExtResource( 10 )]
+position = Vector2( 2304, 864 )
+script = ExtResource( 13 )
 
 [node name="Camera2D" type="Camera2D" parent="Game"]
 anchor_mode = 0

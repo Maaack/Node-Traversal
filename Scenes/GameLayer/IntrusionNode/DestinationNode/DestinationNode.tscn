@@ -6,6 +6,7 @@
 
 [node name="DestinationNode" groups=[
 "DESTINATION",
+"GREEN_NODE",
 ] instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 action = ExtResource( 2 )
