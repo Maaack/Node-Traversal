@@ -54,7 +54,10 @@ func connect_character(character:IntrusionCharacter) -> bool :
 		return true
 	return false
 
-func can_connect_character(character:IntrusionCharacter):
+func can_connect_character(character:IntrusionCharacter) -> bool:
+	if occupying_character != null:
+		if occupying_character.intrusion_id == character.intrusion_id:
+			return false
 	for connected_node in connected_nodes:
 		if connected_node.occupying_character == null:
 			continue
