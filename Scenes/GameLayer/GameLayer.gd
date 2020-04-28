@@ -42,4 +42,4 @@ func _set_current_level_from_index():
 	if levels.has(current_level_index):
 		current_level_node = levels[current_level_index]
 		camera_node.global_position = current_level_node.camera_node.global_position
-		camera_node.scale = current_level_node.camera_node.scale
+		camera_node.zoom = current_level_node.camera_node.zoom

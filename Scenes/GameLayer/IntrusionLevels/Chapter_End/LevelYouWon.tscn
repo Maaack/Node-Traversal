@@ -1,0 +1,206 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_0.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/GameLayer/IntrusionPath/IntrusionPath.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/GameLayer/IntrusionNode/OpenNode/OpenNode.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/GameLayer/IntrusionNode/StartingNode/StartingNode.tscn" type="PackedScene" id=4]
+
+[node name="LevelYouWon" instance=ExtResource( 1 )]
+starting_unlocks = 100
+
+[node name="StartingNode" parent="." index="0"]
+position = Vector2( 384, 272 )
+
+[node name="OpenNode" parent="." index="1"]
+position = Vector2( 384, 512 )
+
+[node name="DestinationNode" parent="." index="2"]
+visible = false
+position = Vector2( 920, -352 )
+
+[node name="IntrusionPath" parent="." index="3"]
+position = Vector2( 304, 188 )
+target_a_path = NodePath("../StartingNode")
+target_b_path = NodePath("../OpenNode2")
+
+[node name="IntrusionPath2" parent="." index="4"]
+position = Vector2( 384, 392 )
+target_a_path = NodePath("../../LevelYouWon/StartingNode")
+target_b_path = NodePath("../../LevelYouWon/OpenNode")
+
+[node name="DestinationPath" parent="." index="5"]
+visible = false
+position = Vector2( 1008, -352 )
+
+[node name="Camera2D" parent="." index="6"]
+zoom = Vector2( 2, 2 )
+
+[node name="InstructionsNode" parent="." index="7"]
+visible = false
+
+[node name="ToolsNode" parent="." index="8"]
+visible = false
+
+[node name="StartingNode2" parent="." index="9" instance=ExtResource( 4 )]
+position = Vector2( 1184, 96 )
+
+[node name="StartingNode3" parent="." index="10" instance=ExtResource( 4 )]
+position = Vector2( 1496, 104 )
+
+[node name="OpenNode2" parent="." index="11" instance=ExtResource( 3 )]
+position = Vector2( 224, 104 )
+
+[node name="OpenNode3" parent="." index="12" instance=ExtResource( 3 )]
+position = Vector2( 544, 104 )
+
+[node name="OpenNode4" parent="." index="13" instance=ExtResource( 3 )]
+position = Vector2( 864, 96 )
+
+[node name="OpenNode5" parent="." index="14" instance=ExtResource( 3 )]
+position = Vector2( 864, 512 )
+
+[node name="OpenNode6" parent="." index="15" instance=ExtResource( 3 )]
+position = Vector2( 1184, 512 )
+
+[node name="OpenNode7" parent="." index="16" instance=ExtResource( 3 )]
+position = Vector2( 1496, 504 )
+
+[node name="OpenNode8" parent="." index="17" instance=ExtResource( 3 )]
+position = Vector2( 1816, 504 )
+
+[node name="OpenNode9" parent="." index="18" instance=ExtResource( 3 )]
+position = Vector2( 1816, 96 )
+
+[node name="OpenNode10" parent="." index="19" instance=ExtResource( 3 )]
+position = Vector2( 128, 688 )
+
+[node name="OpenNode11" parent="." index="20" instance=ExtResource( 3 )]
+position = Vector2( 256, 1096 )
+
+[node name="StartingNode4" parent="." index="21" instance=ExtResource( 4 )]
+position = Vector2( 384, 688 )
+
+[node name="OpenNode12" parent="." index="22" instance=ExtResource( 3 )]
+position = Vector2( 512, 1096 )
+
+[node name="OpenNode13" parent="." index="23" instance=ExtResource( 3 )]
+position = Vector2( 640, 688 )
+
+[node name="OpenNode14" parent="." index="24" instance=ExtResource( 3 )]
+position = Vector2( 864, 688 )
+
+[node name="OpenNode15" parent="." index="25" instance=ExtResource( 3 )]
+position = Vector2( 864, 1096 )
+
+[node name="OpenNode16" parent="." index="26" instance=ExtResource( 3 )]
+position = Vector2( 1184, 688 )
+
+[node name="StartingNode5" parent="." index="27" instance=ExtResource( 4 )]
+position = Vector2( 1184, 1096 )
+
+[node name="StartingNode6" parent="." index="28" instance=ExtResource( 4 )]
+position = Vector2( 1504, 1096 )
+
+[node name="OpenNode17" parent="." index="29" instance=ExtResource( 3 )]
+position = Vector2( 1504, 688 )
+
+[node name="OpenNode18" parent="." index="30" instance=ExtResource( 3 )]
+position = Vector2( 1824, 1096 )
+
+[node name="OpenNode19" parent="." index="31" instance=ExtResource( 3 )]
+position = Vector2( 1824, 688 )
+
+[node name="IntrusionPath3" parent="." index="32" instance=ExtResource( 2 )]
+position = Vector2( 464, 188 )
+target_a_path = NodePath("../StartingNode")
+target_b_path = NodePath("../OpenNode3")
+
+[node name="IntrusionPath4" parent="." index="33" instance=ExtResource( 2 )]
+position = Vector2( 1024, 96 )
+target_a_path = NodePath("../StartingNode2")
+target_b_path = NodePath("../OpenNode4")
+
+[node name="IntrusionPath5" parent="." index="34" instance=ExtResource( 2 )]
+position = Vector2( 864, 304 )
+target_a_path = NodePath("../OpenNode4")
+target_b_path = NodePath("../OpenNode5")
+
+[node name="IntrusionPath6" parent="." index="35" instance=ExtResource( 2 )]
+position = Vector2( 1024, 512 )
+target_a_path = NodePath("../OpenNode5")
+target_b_path = NodePath("../OpenNode6")
+
+[node name="IntrusionPath7" parent="." index="36" instance=ExtResource( 2 )]
+position = Vector2( 1184, 304 )
+target_a_path = NodePath("../OpenNode6")
+target_b_path = NodePath("../StartingNode2")
+
+[node name="IntrusionPath8" parent="." index="37" instance=ExtResource( 2 )]
+position = Vector2( 1496, 304 )
+target_a_path = NodePath("../StartingNode3")
+target_b_path = NodePath("../OpenNode7")
+
+[node name="IntrusionPath9" parent="." index="38" instance=ExtResource( 2 )]
+position = Vector2( 1656, 504 )
+target_a_path = NodePath("../OpenNode7")
+target_b_path = NodePath("../OpenNode8")
+
+[node name="IntrusionPath10" parent="." index="39" instance=ExtResource( 2 )]
+position = Vector2( 1816, 300 )
+target_a_path = NodePath("../OpenNode8")
+target_b_path = NodePath("../OpenNode9")
+
+[node name="IntrusionPath11" parent="." index="40" instance=ExtResource( 2 )]
+position = Vector2( 192, 892 )
+target_a_path = NodePath("../OpenNode10")
+target_b_path = NodePath("../OpenNode11")
+
+[node name="IntrusionPath12" parent="." index="41" instance=ExtResource( 2 )]
+position = Vector2( 320, 892 )
+target_a_path = NodePath("../OpenNode11")
+target_b_path = NodePath("../StartingNode4")
+
+[node name="IntrusionPath13" parent="." index="42" instance=ExtResource( 2 )]
+position = Vector2( 448, 892 )
+target_a_path = NodePath("../StartingNode4")
+target_b_path = NodePath("../OpenNode12")
+
+[node name="IntrusionPath14" parent="." index="43" instance=ExtResource( 2 )]
+position = Vector2( 576, 892 )
+target_a_path = NodePath("../OpenNode12")
+target_b_path = NodePath("../OpenNode13")
+
+[node name="IntrusionPath15" parent="." index="44" instance=ExtResource( 2 )]
+position = Vector2( 864, 892 )
+target_a_path = NodePath("../OpenNode14")
+target_b_path = NodePath("../OpenNode15")
+
+[node name="IntrusionPath16" parent="." index="45" instance=ExtResource( 2 )]
+position = Vector2( 1024, 688 )
+target_a_path = NodePath("../OpenNode14")
+target_b_path = NodePath("../OpenNode16")
+
+[node name="IntrusionPath17" parent="." index="46" instance=ExtResource( 2 )]
+position = Vector2( 1024, 1096 )
+target_a_path = NodePath("../OpenNode15")
+target_b_path = NodePath("../StartingNode5")
+
+[node name="IntrusionPath18" parent="." index="47" instance=ExtResource( 2 )]
+position = Vector2( 1184, 892 )
+target_a_path = NodePath("../OpenNode16")
+target_b_path = NodePath("../StartingNode5")
+
+[node name="IntrusionPath19" parent="." index="48" instance=ExtResource( 2 )]
+position = Vector2( 1504, 892 )
+target_a_path = NodePath("../StartingNode6")
+target_b_path = NodePath("../OpenNode17")
+
+[node name="IntrusionPath20" parent="." index="49" instance=ExtResource( 2 )]
+position = Vector2( 1664, 892 )
+target_a_path = NodePath("../OpenNode17")
+target_b_path = NodePath("../OpenNode18")
+
+[node name="IntrusionPath21" parent="." index="50" instance=ExtResource( 2 )]
+position = Vector2( 1824, 892 )
+target_a_path = NodePath("../OpenNode18")
+target_b_path = NodePath("../OpenNode19")
