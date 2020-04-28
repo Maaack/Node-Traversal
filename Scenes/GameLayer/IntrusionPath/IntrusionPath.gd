@@ -23,11 +23,15 @@ func _process(delta):
 	update_line()
 
 func set_target_a_path(value:NodePath):
+	if is_instance_valid(target_a):
+		disconnect_nodes()
 	target_a_path = value
 	target_a = get_node_or_null(target_a_path)
 	connect_nodes()
 
 func set_target_b_path(value:NodePath):
+	if is_instance_valid(target_b):
+		disconnect_nodes()
 	target_b_path = value
 	target_b = get_node_or_null(target_b_path)
 	connect_nodes()
