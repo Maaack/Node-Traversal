@@ -6,7 +6,6 @@
 [ext_resource path="res://Scenes/GameLayer/IntrusionNode/StartingNode/StartingNode.tscn" type="PackedScene" id=4]
 
 [node name="LevelYouWon" instance=ExtResource( 1 )]
-starting_unlocks = 100
 
 [node name="StartingNode" parent="." index="0"]
 position = Vector2( 384, 272 )
