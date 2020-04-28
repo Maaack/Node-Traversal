@@ -12,8 +12,8 @@
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_2.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_5.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_6.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_0.gd" type="Script" id=13]
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_End/LevelYouWon.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_3.tscn" type="PackedScene" id=15]
 
 [node name="GameLayer" type="Control"]
 anchor_right = 1.0
@@ -67,7 +67,9 @@ position = Vector2( 1152, 864 )
 
 [node name="Level_1_2" parent="Game" instance=ExtResource( 10 )]
 position = Vector2( 2304, 864 )
-script = ExtResource( 13 )
+
+[node name="Level_1_3" parent="Game" instance=ExtResource( 15 )]
+position = Vector2( 3456, 864 )
 
 [node name="LevelYouWon" parent="Game" instance=ExtResource( 14 )]
 position = Vector2( 0, 2048 )
