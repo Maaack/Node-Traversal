@@ -4,26 +4,21 @@
 [ext_resource path="res://Scenes/GameLayer/IntrusionPath/IntrusionPath.tscn" type="PackedScene" id=2]
 
 [node name="Level_0_5" instance=ExtResource( 1 )]
-starting_unlocks = 3
+starting_unlocks = 2
 
-[node name="IntrusionPath2" parent="." index="7"]
-position = Vector2( 512, 464 )
-target_a_path = NodePath("../OpenNode")
-target_b_path = NodePath("../OpenNode2")
-
-[node name="IntrusionPath" parent="." index="8"]
+[node name="IntrusionPath" parent="." index="7"]
 position = Vector2( 216, 382 )
 target_a_path = NodePath("../StartingNode")
 target_b_path = NodePath("../OpenNode")
 
+[node name="IntrusionPath2" parent="." index="8"]
+position = Vector2( 512, 464 )
+target_a_path = NodePath("../OpenNode")
+target_b_path = NodePath("../OpenNode2")
+
 [node name="IntrusionPath3" parent="." index="9"]
 position = Vector2( 344, 300 )
 target_a_path = NodePath("../OpenNode")
-target_b_path = NodePath("../OpenNode3")
-
-[node name="IntrusionPath4" parent="." index="10"]
-position = Vector2( 216, 218 )
-target_a_path = NodePath("../StartingNode")
 target_b_path = NodePath("../OpenNode3")
 
 [node name="IntrusionPath5" parent="." index="11"]
@@ -32,7 +27,6 @@ target_a_path = NodePath("../StartingNode")
 
 [node name="IntrusionPath6" parent="." index="12"]
 position = Vector2( 512, 136 )
-target_a_path = NodePath("../OpenNode4")
 target_b_path = NodePath("../OpenNode3")
 
 [node name="IntrusionPath7" parent="." index="13"]
@@ -43,3 +37,6 @@ target_a_path = NodePath("../OpenNode4")
 position = Vector2( 428, 218 )
 target_a_path = NodePath("../OpenNode3")
 target_b_path = NodePath("../OpenNode5")
+
+[node name="Camera2D" parent="." index="16"]
+position = Vector2( 0, 0 )

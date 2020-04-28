@@ -6,7 +6,7 @@ class_name ChapterOneLevel
 
 onready var unlocks_count_node = $ToolsNode/UnlocksCounter/UnlocksCount
 
-export(int) var starting_unlocks : int = 2 setget set_starting_unlocks
+export(int) var starting_unlocks : int = 1 setget set_starting_unlocks
 
 var current_unlocks
 
@@ -24,12 +24,14 @@ func _connect_player_to_node(node:IntrusionNode):
 			_remove_unlock(node)
 
 func _can_unlock(node:IntrusionNode) -> bool :
-	if node.is_in_group('BLUE_NODE') or node.is_in_group('GREEN_NODE'):
+	if node.is_in_group('GREEN_NODE'):
+		return true
+	if node.is_in_group('BLUE_NODE'):
 		return current_unlocks > 0
 	return false
 
 func _remove_unlock(node:IntrusionNode):
-	if node.is_in_group('BLUE_NODE') or node.is_in_group('GREEN_NODE'):
+	if node.is_in_group('BLUE_NODE'):
 		current_unlocks -= 1
 		_update_tool_counts()
 

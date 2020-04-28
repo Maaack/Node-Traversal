@@ -9,12 +9,12 @@
 ] instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
-[node name="IntrusionPath2" parent="." index="6"]
+[node name="IntrusionPath" parent="." index="6"]
+target_a_path = NodePath("../OpenNode")
+
+[node name="IntrusionPath2" parent="." index="7"]
 target_a_path = NodePath("../StartingNode")
 target_b_path = NodePath("../OpenNode")
-
-[node name="IntrusionPath" parent="." index="7"]
-target_a_path = NodePath("../OpenNode")
 
 [node name="IntrusionPath3" parent="." index="8"]
 position = Vector2( 512, 300 )

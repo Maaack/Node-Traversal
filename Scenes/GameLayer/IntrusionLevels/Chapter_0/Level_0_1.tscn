@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_0.tscn" type="PackedScene" id=3]
 
 [node name="Level_0_1" instance=ExtResource( 3 )]
-starting_unlocks = 3
+starting_unlocks = 2
 
 [node name="OpenNode" parent="." index="1"]
 position = Vector2( 512, 480 )
@@ -13,12 +13,12 @@ position = Vector2( 512, 480 )
 [node name="OpenNode2" parent="." index="2" instance=ExtResource( 2 )]
 position = Vector2( 512, 120 )
 
-[node name="IntrusionPath2" parent="." index="4"]
-position = Vector2( 300, 390 )
-
-[node name="IntrusionPath" parent="." index="5"]
+[node name="IntrusionPath" parent="." index="4"]
 position = Vector2( 512, 300 )
 target_b_path = NodePath("../OpenNode2")
+
+[node name="IntrusionPath2" parent="." index="5"]
+position = Vector2( 300, 390 )
 
 [node name="IntrusionPath3" parent="." index="6" instance=ExtResource( 1 )]
 position = Vector2( 724, 210 )

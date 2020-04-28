@@ -38,15 +38,18 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="Level_0_0" parent="Game" instance=ExtResource( 1 )]
+starting_unlocks = 2
 
 [node name="Level_0_1" parent="Game" instance=ExtResource( 6 )]
 position = Vector2( 1152, 0 )
 
 [node name="Level_0_2" parent="Game" instance=ExtResource( 7 )]
 position = Vector2( 2304, 0 )
+starting_unlocks = 3
 
 [node name="Level_0_3" parent="Game" instance=ExtResource( 8 )]
 position = Vector2( 3456, 0 )
+starting_unlocks = 3
 
 [node name="Level_0_4" parent="Game" instance=ExtResource( 9 )]
 position = Vector2( 4608, 0 )
@@ -56,6 +59,7 @@ position = Vector2( 5760, 0 )
 
 [node name="Level_0_6" parent="Game" instance=ExtResource( 12 )]
 position = Vector2( 6912, 0 )
+starting_unlocks = 3
 
 [node name="Level_1_0" parent="Game" instance=ExtResource( 4 )]
 position = Vector2( 0, 864 )
@@ -68,7 +72,9 @@ position = Vector2( 1152, 864 )
 [node name="Level_1_2" parent="Game" instance=ExtResource( 10 )]
 position = Vector2( 2304, 864 )
 
-[node name="Level_1_3" parent="Game" instance=ExtResource( 15 )]
+[node name="Level_1_3" parent="Game" groups=[
+"LEVEL",
+] instance=ExtResource( 15 )]
 position = Vector2( 3456, 864 )
 
 [node name="LevelYouWon" parent="Game" instance=ExtResource( 14 )]

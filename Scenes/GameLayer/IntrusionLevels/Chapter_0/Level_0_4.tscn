@@ -1,18 +1,21 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_3.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/GameLayer/IntrusionNode/OpenNode/OpenNode.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/GameLayer/IntrusionPath/IntrusionPath.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_0.gd" type="Script" id=4]
 
-[node name="Level_0_4" groups=[
-"LEVEL",
-] instance=ExtResource( 1 )]
-script = ExtResource( 4 )
-starting_unlocks = 4
+[node name="Level_0_4" instance=ExtResource( 1 )]
+starting_unlocks = 3
 
 [node name="OpenNode5" parent="." index="5" instance=ExtResource( 2 )]
 position = Vector2( 512, 300 )
+
+[node name="IntrusionPath" parent="." index="7"]
+position = Vector2( 512, 464 )
+target_b_path = NodePath("../OpenNode2")
+
+[node name="IntrusionPath2" parent="." index="8"]
+position = Vector2( 216, 382 )
 
 [node name="IntrusionPath3" parent="." index="9"]
 position = Vector2( 512, 136 )
