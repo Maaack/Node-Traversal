@@ -4,10 +4,10 @@
 [ext_resource path="res://Scenes/GameLayer/IntrusionNode/StartingNode/StartingNode.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/GameLayer/IntrusionPath/IntrusionPath.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/GameLayer/IntrusionNode/DestinationNode/DestinationNode.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/IntrusionLevel.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_0.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/GameLayer/BasicPath/BasicPath.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Themes/StandardFontTheme.tres" type="Theme" id=7]
-[ext_resource path="res://Assets/Originals/NodeCircle.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Counters/UnlocksCounter.tscn" type="PackedScene" id=8]
 
 [node name="Level_0_0" type="Node2D" groups=[
 "LEVEL",
@@ -63,23 +63,4 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="BasicUnlocks" type="Node2D" parent="ToolsNode"]
-position = Vector2( -80, 8 )
-
-[node name="Sprite" type="Sprite" parent="ToolsNode/BasicUnlocks"]
-modulate = Color( 0, 0.952941, 1, 1 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 8 )
-
-[node name="UnlocksCount" type="Label" parent="ToolsNode/BasicUnlocks"]
-margin_left = 24.0
-margin_top = -8.0
-margin_right = 70.0
-margin_bottom = 12.0
-theme = ExtResource( 7 )
-text = "2 / 2"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="UnlocksCounter" parent="ToolsNode" instance=ExtResource( 8 )]

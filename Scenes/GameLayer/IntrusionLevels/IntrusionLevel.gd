@@ -8,18 +8,15 @@ signal destination_reached
 
 onready var camera_node = $Camera2D
 onready var destination_path_node = $DestinationPath
-onready var unlocks_count_node = $ToolsNode/BasicUnlocks/UnlocksCount
 
 export(Vector2) var action_box_position_offset = Vector2(0, 120)
 export(Vector2) var action_box_margin = Vector2(128, 48)
-export(int) var starting_unlocks : int = 2 setget set_starting_unlocks
 
 var action_box_scene = preload("res://Scenes/GameLayer/UIBox/ActionBox/ActionBoxNode.tscn")
 var player_character = preload("res://Scenes/GameLayer/Character/PlayerCharacter.tres")
 var ignore_input : bool = false
 var node_action_box_map = {}
 var highlighted_node
-var current_unlocks
 
 func _ready():
 	for level_child in get_children():
@@ -34,6 +31,10 @@ func _ready():
 				level_child.connect("destination_reached", self, "_on_DestinationNode_destination_reached")
 	_reset_level()
 
+func _connect_player_to_node(node:IntrusionNode):
+	if node is IntrusionNode:
+		return highlighted_node.connect_character(player_character)
+
 func _unhandled_input(event):
 	if ignore_input:
 		return
@@ -44,11 +45,7 @@ func _handle_input_event(event:InputEvent):
 		if not is_instance_valid(highlighted_node):
 			return
 		if highlighted_node is IntrusionNode:
-			if current_unlocks > 0:
-				var connected = highlighted_node.connect_character(player_character)
-				if connected:
-					current_unlocks -= 1
-					_update_tool_counts()
+			_connect_player_to_node(highlighted_node)
 	elif event.is_action_pressed("game_reset_action"):
 		_reset_level()
 
@@ -65,7 +62,7 @@ func _on_IntrusionNode_mouse_exited(node:IntrusionNode):
 	if is_instance_valid(node):
 		hide_action_box(node)
 
-func _on_DestinationNode_destination_reached(character:IntrusionCharacter, node:IntrusionNode):
+func _on_DestinationNode_destination_reached(character:IntrusionCharacter, _node:IntrusionNode):
 	if character == null:
 		return
 	if character.intrusion_id == player_character.intrusion_id:
@@ -79,18 +76,7 @@ func _reset_level():
 			continue
 		if level_child is IntrusionNode:
 			level_child.occupying_character = null
-	current_unlocks = starting_unlocks
-	_update_tool_counts()
 
-func _update_tool_counts():
-	if is_instance_valid(unlocks_count_node):
-		unlocks_count_node.text = "%d / %d" % [current_unlocks, starting_unlocks]
-
-func set_starting_unlocks(value:int):
-	starting_unlocks = value
-	if starting_unlocks != null:
-		_update_tool_counts()
-	
 func game_input(event):
 	_handle_input_event(event)
 

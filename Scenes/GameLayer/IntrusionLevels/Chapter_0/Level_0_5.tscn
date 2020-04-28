@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Level_0_4.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_4.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/GameLayer/IntrusionPath/IntrusionPath.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Themes/StandardFontTheme.tres" type="Theme" id=3]
+
 
 [node name="Level_0_5" instance=ExtResource( 1 )]
 starting_unlocks = 3
