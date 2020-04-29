@@ -7,11 +7,11 @@
 [node name="OpenNode" parent="." index="1"]
 position = Vector2( 288, 388 )
 
-[node name="OpenNode3" parent="." index="2"]
-position = Vector2( 512, 216 )
-
-[node name="OpenNode2" parent="." index="3"]
+[node name="OpenNode2" parent="." index="2"]
 position = Vector2( 512, 560 )
+
+[node name="OpenNode3" parent="." index="3"]
+position = Vector2( 512, 216 )
 
 [node name="OpenNode4" parent="." index="4"]
 position = Vector2( 512, 48 )

@@ -23,11 +23,11 @@ position = Vector2( 88, 300 )
 [node name="OpenNode" parent="." instance=ExtResource( 3 )]
 position = Vector2( 320, 472 )
 
-[node name="OpenNode3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 704, 128 )
-
 [node name="OpenNode2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 704, 472 )
+
+[node name="OpenNode3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 704, 128 )
 
 [node name="RedNode" parent="." instance=ExtResource( 9 )]
 position = Vector2( 320, 128 )

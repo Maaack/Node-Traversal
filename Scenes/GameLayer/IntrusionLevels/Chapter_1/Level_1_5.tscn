@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_3.tscn" type="PackedScene" id=1]
+
+[node name="Level_1_5" instance=ExtResource( 1 )]
+starting_unlocks = 0
+starting_red_unlocks = 4
+
+[node name="OpenNode3" parent="." index="3"]
+position = Vector2( 512, 48 )
+
+[node name="OpenNode4" parent="." index="4"]
+position = Vector2( 744, 216 )
+
+[node name="RedNode3" parent="." index="8"]
+position = Vector2( 744, 392 )
+
+[node name="RedNode4" parent="." index="9"]
+position = Vector2( 512, 224 )
+
+[node name="IntrusionPath3" parent="." index="13"]
+target_a_path = NodePath("../../Level_1_5/StartingNode")
+target_b_path = NodePath("../../Level_1_5/RedNode")
+
+[node name="IntrusionPath4" parent="." index="14"]
+position = Vector2( 400, 132 )
+target_b_path = NodePath("../../Level_1_5/OpenNode3")
+
+[node name="IntrusionPath5" parent="." index="17"]
+position = Vector2( 400, 304 )
+target_a_path = NodePath("../../Level_1_5/RedNode")
+target_b_path = NodePath("../../Level_1_5/RedNode2")
+
+[node name="IntrusionPath6" parent="." index="18"]
+position = Vector2( 512, 308 )
+target_a_path = NodePath("../../Level_1_5/RedNode2")
+target_b_path = NodePath("../../Level_1_5/RedNode4")
+
+[node name="IntrusionPath7" parent="." index="19"]
+visible = false
+target_a_path = NodePath("")
+target_b_path = NodePath("")
+
+[node name="IntrusionPath8" parent="." index="22"]
+position = Vector2( 400, 306 )
+target_a_path = NodePath("../../Level_1_5/OpenNode")
+target_b_path = NodePath("../../Level_1_5/RedNode4")
+
+[node name="IntrusionPath9" parent="." index="23"]
+target_a_path = NodePath("../../Level_1_5/OpenNode2")
+target_b_path = NodePath("../../Level_1_5/RedNode3")
+
+[node name="IntrusionPath11" parent="." index="25"]
+position = Vector2( 628, 308 )
+target_a_path = NodePath("../../Level_1_5/RedNode4")
+target_b_path = NodePath("../../Level_1_5/RedNode3")
+
+[node name="IntrusionPath12" parent="." index="26"]
+target_a_path = NodePath("../../Level_1_5/OpenNode4")
+target_b_path = NodePath("../../Level_1_5/DestinationNode")
+
+[node name="IntrusionPath13" parent="." index="27"]
+target_a_path = NodePath("../../Level_1_5/RedNode3")
+target_b_path = NodePath("../../Level_1_5/DestinationNode")
+
+[node name="IntrusionPath14" parent="." index="28"]
+target_a_path = NodePath("../../Level_1_5/RedNode2")
+target_b_path = NodePath("../../Level_1_5/OpenNode4")
+
+[node name="IntrusionPath15" parent="." index="29"]
+target_a_path = NodePath("../../Level_1_5/OpenNode3")
+target_b_path = NodePath("../../Level_1_5/OpenNode4")
