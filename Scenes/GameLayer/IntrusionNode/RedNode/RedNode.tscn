@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scenes/GameLayer/IntrusionAction/RangedCostAction/Actions/Attack.tres" type="Resource" id=1]
+[ext_resource path="res://Scenes/GameLayer/IntrusionAction/Actions/Connect.tres" type="Resource" id=1]
 [ext_resource path="res://Scenes/GameLayer/IntrusionNode/IntrusionNode.tscn" type="PackedScene" id=2]
 
 [node name="RedNode" groups=[
