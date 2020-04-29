@@ -2,7 +2,7 @@ tool
 extends IntrusionLevel
 
 
-class_name ChapterOneLevel
+class_name ChapterZeroLevel
 
 onready var unlocks_count_node = $ToolsNode/UnlocksCounter/UnlocksCount
 

@@ -7,14 +7,19 @@
 [node name="Level_2_0" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
+[node name="RedNode" parent="." index="3"]
+position = Vector2( 376, 136 )
+
 [node name="IntrusionPath" parent="." index="5"]
 target_b_path = NodePath("../../Level_2_0/OpenNode2")
 
 [node name="IntrusionPath3" parent="." index="7"]
+position = Vector2( 232, 218 )
 target_a_path = NodePath("../../Level_2_0/StartingNode")
 target_b_path = NodePath("../../Level_2_0/RedNode")
 
 [node name="IntrusionPath4" parent="." index="8"]
+position = Vector2( 656, 218 )
 target_a_path = NodePath("../../Level_2_0/RedNode")
 target_b_path = NodePath("../../Level_2_0/DestinationNode")
 

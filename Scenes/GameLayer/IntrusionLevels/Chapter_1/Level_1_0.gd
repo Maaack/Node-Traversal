@@ -1,8 +1,8 @@
 tool
-extends ChapterOneLevel
+extends ChapterZeroLevel
 
 
-class_name ChapterTwoLevel
+class_name ChapterOneLevel
 
 onready var red_unlocks_count_node = $ToolsNode/RedUnlocksCounter/UnlocksCount
 
