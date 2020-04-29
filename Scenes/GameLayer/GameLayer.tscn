@@ -23,7 +23,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-starting_level_index = 7
+starting_level_index = 9
 
 [node name="Game" type="Node2D" parent="."]
 
@@ -64,17 +64,13 @@ starting_unlocks = 3
 [node name="Level_1_0" parent="Game" instance=ExtResource( 4 )]
 position = Vector2( 0, 864 )
 
-[node name="Level_1_1" parent="Game" groups=[
-"LEVEL",
-] instance=ExtResource( 5 )]
+[node name="Level_1_1" parent="Game" instance=ExtResource( 5 )]
 position = Vector2( 1152, 864 )
 
 [node name="Level_1_2" parent="Game" instance=ExtResource( 10 )]
 position = Vector2( 2304, 864 )
 
-[node name="Level_1_3" parent="Game" groups=[
-"LEVEL",
-] instance=ExtResource( 15 )]
+[node name="Level_1_3" parent="Game" instance=ExtResource( 15 )]
 position = Vector2( 3456, 864 )
 
 [node name="LevelYouWon" parent="Game" instance=ExtResource( 14 )]

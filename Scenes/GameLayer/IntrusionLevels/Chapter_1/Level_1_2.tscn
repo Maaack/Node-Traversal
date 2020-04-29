@@ -36,9 +36,10 @@ position = Vector2( 744, 300 )
 position = Vector2( 744, 128 )
 
 [node name="IntrusionPath" parent="." index="11"]
+visible = false
 position = Vector2( 400, 472 )
-target_a_path = NodePath("../../Level_1_2/OpenNode")
-target_b_path = NodePath("../../Level_1_2/OpenNode2")
+target_a_path = NodePath("")
+target_b_path = NodePath("")
 
 [node name="IntrusionPath2" parent="." index="12"]
 position = Vector2( 188, 386 )
