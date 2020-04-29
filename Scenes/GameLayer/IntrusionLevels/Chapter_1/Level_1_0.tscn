@@ -9,7 +9,6 @@
 
 [node name="Level_1_0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-starting_red_unlocks = 1
 
 [node name="OpenNode" parent="." index="1"]
 position = Vector2( 320, 472 )

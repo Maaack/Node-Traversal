@@ -14,6 +14,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_0.gd"
 }, {
+"base": "ChapterTwoLevel",
+"class": "ChapterThreeLevel",
+"language": "GDScript",
+"path": "res://Scenes/GameLayer/IntrusionLevels/Chapter_2/Level_2_0.gd"
+}, {
+"base": "ChapterOneLevel",
+"class": "ChapterTwoLevel",
+"language": "GDScript",
+"path": "res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_0.gd"
+}, {
 "base": "IntrusionNode",
 "class": "DestinationNode",
 "language": "GDScript",
@@ -56,6 +66,8 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "ChapterOneLevel": "",
+"ChapterThreeLevel": "",
+"ChapterTwoLevel": "",
 "DestinationNode": "",
 "IntrusionAction": "",
 "IntrusionCharacter": "",

@@ -1,7 +1,7 @@
 extends Control
 
 
-onready var camera_node = $Game/Camera2D
+onready var camera_node = $Camera2D
 onready var game_node = $Game
 
 export(int, 0, 1024) var starting_level_index = 0

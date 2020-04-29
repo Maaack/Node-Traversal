@@ -2,9 +2,11 @@ tool
 extends ChapterOneLevel
 
 
+class_name ChapterTwoLevel
+
 onready var red_unlocks_count_node = $ToolsNode/RedUnlocksCounter/UnlocksCount
 
-export(int) var starting_red_unlocks : int = 2 setget set_starting_red_unlocks
+export(int) var starting_red_unlocks : int = 1 setget set_starting_red_unlocks
 
 var current_red_unlocks
 

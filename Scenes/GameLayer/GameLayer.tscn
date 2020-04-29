@@ -15,9 +15,9 @@
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_5.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_End/LevelYouWon.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_3.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_0.gd" type="Script" id=16]
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_4.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_6.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_2/Level_2_0.tscn" type="PackedScene" id=19]
 
 [node name="GameLayer" type="Control"]
 anchor_right = 1.0
@@ -27,7 +27,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-starting_level_index = 9
+starting_level_index = 7
 
 [node name="Game" type="Node2D" parent="."]
 
@@ -74,31 +74,25 @@ position = Vector2( 1152, 864 )
 [node name="Level_1_2" parent="Game" instance=ExtResource( 10 )]
 position = Vector2( 2304, 864 )
 
-[node name="Level_1_3" parent="Game" groups=[
-"LEVEL",
-] instance=ExtResource( 15 )]
+[node name="Level_1_3" parent="Game" instance=ExtResource( 15 )]
 position = Vector2( 3456, 864 )
-script = ExtResource( 16 )
 
-[node name="Level_1_4" parent="Game" groups=[
-"LEVEL",
-] instance=ExtResource( 17 )]
+[node name="Level_1_4" parent="Game" instance=ExtResource( 17 )]
 position = Vector2( 4608, 864 )
-script = ExtResource( 16 )
 
-[node name="Level_1_5" parent="Game" groups=[
-"LEVEL",
-] instance=ExtResource( 13 )]
+[node name="Level_1_5" parent="Game" instance=ExtResource( 13 )]
 position = Vector2( 5760, 864 )
-script = ExtResource( 16 )
 
 [node name="Level_1_6" parent="Game" instance=ExtResource( 18 )]
 position = Vector2( 6912, 864 )
 
-[node name="LevelYouWon" parent="Game" instance=ExtResource( 14 )]
-position = Vector2( 0, 2048 )
+[node name="Level_2_0" parent="Game" instance=ExtResource( 19 )]
+position = Vector2( 0, 1824 )
 
-[node name="Camera2D" type="Camera2D" parent="Game"]
+[node name="LevelYouWon" parent="Game" instance=ExtResource( 14 )]
+position = Vector2( 0, 2816 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 current = true
 smoothing_enabled = true
