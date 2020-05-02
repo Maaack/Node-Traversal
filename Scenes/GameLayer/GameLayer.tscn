@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/GameLayer/Game/Game.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/GameLayer/GameLayer.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/MainMenu/MainMenu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Sounds/507728__akelley6__dreams.wav" type="AudioStream" id=4]
 
 [node name="GameLayer" type="Control"]
 anchor_right = 1.0
@@ -21,5 +22,10 @@ current = true
 smoothing_enabled = true
 
 [node name="MainMenu" parent="." instance=ExtResource( 3 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -20.0
+autoplay = true
 [connection signal="resized" from="." to="." method="_on_GameLayer_resized"]
 [connection signal="start_level" from="MainMenu" to="." method="_on_MainMenu_start_level"]

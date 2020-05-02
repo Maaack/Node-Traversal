@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Counters/UnlocksCounter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/GameLayer/IntrusionPath/IntrusionPath.tscn" type="PackedScene" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Scenes/GameLayer/IntrusionNode/StartingNode/StartingNode.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/GameLayer/IntrusionNode/RedNode/RedNode.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Counters/RedUnlocksCounter.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Sounds/327736__distillerystudio__error-03.wav" type="AudioStream" id=11]
+[ext_resource path="res://Assets/Sounds/327724__distillerystudio__button-03.wav" type="AudioStream" id=12]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Focus"
@@ -131,3 +133,11 @@ position = Vector2( -80, 56 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ToolsNode"]
 anims/Focus = SubResource( 1 )
+
+[node name="ConnectAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -10.0
+
+[node name="ErrorAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -15.0
