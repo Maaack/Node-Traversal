@@ -51,7 +51,7 @@ __meta__ = {
 margin_right = 896.0
 margin_bottom = 40.0
 theme = ExtResource( 2 )
-text = "Intrusion Simulator"
+text = "Node Traversal"
 __meta__ = {
 "_edit_lock_": true
 }
@@ -61,7 +61,7 @@ margin_top = 44.0
 margin_right = 896.0
 margin_bottom = 59.0
 theme = ExtResource( 3 )
-text = "by Marek Belski"
+text = "by 50 Shades of Marek"
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -97,13 +97,34 @@ __meta__ = {
 [node name="StartGame" type="Button" parent="MarginContainer/Control/VBoxContainer/MarginContainer/Control/VBoxContainer"]
 margin_right = 364.0
 margin_bottom = 20.0
-text = "Start"
+text = "New Game"
 align = 0
 
-[node name="ContinueGame" type="Button" parent="MarginContainer/Control/VBoxContainer/MarginContainer/Control/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Control/VBoxContainer/MarginContainer/Control/VBoxContainer"]
 margin_top = 38.0
 margin_right = 364.0
 margin_bottom = 58.0
+custom_constants/separation = 24
+
+[node name="Label" type="Label" parent="MarginContainer/Control/VBoxContainer/MarginContainer/Control/VBoxContainer/HBoxContainer"]
+margin_right = 126.0
+margin_bottom = 20.0
+theme = ExtResource( 4 )
+text = "Load Level"
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/Control/VBoxContainer/MarginContainer/Control/VBoxContainer/HBoxContainer"]
+margin_left = 150.0
+margin_right = 150.0
+margin_bottom = 20.0
+custom_constants/vseparation = 8
+custom_constants/hseparation = 16
+columns = 7
+
+[node name="ContinueGame" type="Button" parent="MarginContainer/Control/VBoxContainer/MarginContainer/Control/VBoxContainer"]
+visible = false
+margin_top = 76.0
+margin_right = 364.0
+margin_bottom = 96.0
 text = "Continue"
 align = 0
 
@@ -114,3 +135,4 @@ margin_bottom = 96.0
 text = "Exit"
 align = 0
 [connection signal="pressed" from="MarginContainer/Control/VBoxContainer/MarginContainer/Control/VBoxContainer/StartGame" to="." method="_on_StartGame_pressed"]
+[connection signal="pressed" from="MarginContainer/Control/VBoxContainer/MarginContainer/Control/VBoxContainer/ExitGame" to="." method="_on_ExitGame_pressed"]

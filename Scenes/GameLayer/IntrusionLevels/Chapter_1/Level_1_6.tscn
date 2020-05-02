@@ -5,22 +5,33 @@
 [node name="Level_1_6" instance=ExtResource( 1 )]
 starting_unlocks = 2
 
+[node name="OpenNode" parent="." index="1"]
+position = Vector2( 288, 384 )
+
 [node name="OpenNode4" parent="." index="4"]
 visible = false
 position = Vector2( 1128, 24 )
 
 [node name="OpenNode5" parent="." index="5"]
 visible = true
-position = Vector2( 752, 392 )
+position = Vector2( 736, 384 )
+
+[node name="RedNode2" parent="." index="7"]
+position = Vector2( 512, 384 )
+
+[node name="RedNode3" parent="." index="8"]
+position = Vector2( 736, 216 )
 
 [node name="RedNode4" parent="." index="9"]
 position = Vector2( 512, 48 )
 
 [node name="IntrusionPath" parent="." index="11"]
+position = Vector2( 400, 472 )
 target_a_path = NodePath("../../Level_1_6/OpenNode")
 target_b_path = NodePath("../../Level_1_6/OpenNode2")
 
 [node name="IntrusionPath2" parent="." index="12"]
+position = Vector2( 188, 342 )
 target_a_path = NodePath("../../Level_1_6/StartingNode")
 target_b_path = NodePath("../../Level_1_6/OpenNode")
 
@@ -29,50 +40,61 @@ target_a_path = NodePath("../StartingNode")
 target_b_path = NodePath("../RedNode")
 
 [node name="IntrusionPath4" parent="." index="14"]
-target_a_path = NodePath("../../Level_1_6/RedNode")
-target_b_path = NodePath("../RedNode2")
+position = Vector2( 512, 132 )
+target_a_path = NodePath("../RedNode4")
+target_b_path = NodePath("../OpenNode3")
 
 [node name="IntrusionPath5" parent="." index="17"]
 target_a_path = NodePath("../RedNode")
 target_b_path = NodePath("../RedNode4")
 
 [node name="IntrusionPath6" parent="." index="18"]
-position = Vector2( 512, 304 )
+position = Vector2( 512, 300 )
 target_a_path = NodePath("../../Level_1_6/OpenNode3")
 target_b_path = NodePath("../RedNode2")
 
 [node name="IntrusionPath7" parent="." index="19"]
-visible = false
-target_a_path = NodePath("")
-target_b_path = NodePath("")
+position = Vector2( 400, 216 )
+target_a_path = NodePath("../RedNode")
+target_b_path = NodePath("../OpenNode3")
 
 [node name="IntrusionPath8" parent="." index="22"]
+position = Vector2( 400, 300 )
 target_a_path = NodePath("../OpenNode")
 target_b_path = NodePath("../OpenNode3")
 
 [node name="IntrusionPath9" parent="." index="23"]
-position = Vector2( 632, 476 )
+position = Vector2( 624, 472 )
 target_a_path = NodePath("../OpenNode2")
 target_b_path = NodePath("../OpenNode5")
 
-[node name="IntrusionPath11" parent="." index="25"]
-position = Vector2( 632, 304 )
-target_a_path = NodePath("../OpenNode3")
+[node name="IntrusionPath10" parent="." index="24"]
+visible = true
+position = Vector2( 624, 384 )
+target_a_path = NodePath("../RedNode2")
 target_b_path = NodePath("../OpenNode5")
 
+[node name="IntrusionPath11" parent="." index="25"]
+position = Vector2( 512, 472 )
+target_a_path = NodePath("../RedNode2")
+target_b_path = NodePath("../OpenNode2")
+
 [node name="IntrusionPath12" parent="." index="26"]
+position = Vector2( 836, 258 )
 target_a_path = NodePath("../RedNode3")
 target_b_path = NodePath("../DestinationNode")
 
 [node name="IntrusionPath13" parent="." index="27"]
-position = Vector2( 844, 346 )
+position = Vector2( 836, 342 )
 target_a_path = NodePath("../OpenNode5")
 target_b_path = NodePath("../DestinationNode")
 
 [node name="IntrusionPath14" parent="." index="28"]
+position = Vector2( 624, 300 )
 target_a_path = NodePath("../RedNode2")
 target_b_path = NodePath("../RedNode3")
 
 [node name="IntrusionPath15" parent="." index="29"]
+position = Vector2( 624, 132 )
 target_a_path = NodePath("../RedNode4")
 target_b_path = NodePath("../RedNode3")

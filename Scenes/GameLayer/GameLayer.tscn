@@ -1,23 +1,8 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_0.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/GameLayer/Game/Game.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/GameLayer/GameLayer.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Originals/Background.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_0.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_1.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_1.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_2.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_3.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_4.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_2.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_5.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_6.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_5.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_End/LevelYouWon.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_3.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_4.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_6.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_2/Level_2_0.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/MainMenu/MainMenu.tscn" type="PackedScene" id=3]
 
 [node name="GameLayer" type="Control"]
 anchor_right = 1.0
@@ -27,72 +12,14 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-starting_level_index = 7
 
-[node name="Game" type="Node2D" parent="."]
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="Game"]
-scroll_ignore_camera_zoom = true
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Game/ParallaxBackground"]
-motion_scale = Vector2( 0.015, 0.015 )
-
-[node name="Sprite" type="Sprite" parent="Game/ParallaxBackground/ParallaxLayer"]
-texture = ExtResource( 3 )
-centered = false
-
-[node name="Level_0_0" parent="Game" instance=ExtResource( 1 )]
-starting_unlocks = 2
-
-[node name="Level_0_1" parent="Game" instance=ExtResource( 6 )]
-position = Vector2( 1152, 0 )
-
-[node name="Level_0_2" parent="Game" instance=ExtResource( 7 )]
-position = Vector2( 2304, 0 )
-starting_unlocks = 3
-
-[node name="Level_0_3" parent="Game" instance=ExtResource( 8 )]
-position = Vector2( 3456, 0 )
-starting_unlocks = 3
-
-[node name="Level_0_4" parent="Game" instance=ExtResource( 9 )]
-position = Vector2( 4608, 0 )
-
-[node name="Level_0_5" parent="Game" instance=ExtResource( 11 )]
-position = Vector2( 5760, 0 )
-
-[node name="Level_0_6" parent="Game" instance=ExtResource( 12 )]
-position = Vector2( 6912, 0 )
-starting_unlocks = 3
-
-[node name="Level_1_0" parent="Game" instance=ExtResource( 4 )]
-position = Vector2( 0, 864 )
-
-[node name="Level_1_1" parent="Game" instance=ExtResource( 5 )]
-position = Vector2( 1152, 864 )
-
-[node name="Level_1_2" parent="Game" instance=ExtResource( 10 )]
-position = Vector2( 2304, 864 )
-
-[node name="Level_1_3" parent="Game" instance=ExtResource( 15 )]
-position = Vector2( 3456, 864 )
-
-[node name="Level_1_4" parent="Game" instance=ExtResource( 17 )]
-position = Vector2( 4608, 864 )
-
-[node name="Level_1_5" parent="Game" instance=ExtResource( 13 )]
-position = Vector2( 5760, 864 )
-
-[node name="Level_1_6" parent="Game" instance=ExtResource( 18 )]
-position = Vector2( 6912, 864 )
-
-[node name="Level_2_0" parent="Game" instance=ExtResource( 19 )]
-position = Vector2( 0, 1824 )
-
-[node name="LevelYouWon" parent="Game" instance=ExtResource( 14 )]
-position = Vector2( 0, 2816 )
+[node name="Game" parent="." instance=ExtResource( 1 )]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 current = true
 smoothing_enabled = true
+
+[node name="MainMenu" parent="." instance=ExtResource( 3 )]
+[connection signal="resized" from="." to="." method="_on_GameLayer_resized"]
+[connection signal="start_level" from="MainMenu" to="." method="_on_MainMenu_start_level"]

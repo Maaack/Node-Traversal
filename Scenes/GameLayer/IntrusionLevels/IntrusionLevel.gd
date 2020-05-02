@@ -29,7 +29,7 @@ func _ready():
 			level_child.connect("mouse_exited", self, "_on_IntrusionNode_mouse_exited")
 			if level_child.is_in_group('DESTINATION'):
 				level_child.connect("destination_reached", self, "_on_DestinationNode_destination_reached")
-	_reset_level()
+	reset_level()
 
 func _connect_player_to_node(node:IntrusionNode):
 	if node is IntrusionNode:
@@ -47,7 +47,7 @@ func _handle_input_event(event:InputEvent):
 		if highlighted_node is IntrusionNode:
 			_connect_player_to_node(highlighted_node)
 	elif event.is_action_pressed("game_reset_action"):
-		_reset_level()
+		reset_level()
 
 func _on_IntrusionNode_mouse_entered(node:IntrusionNode):
 	if not is_instance_valid(node):
@@ -77,7 +77,7 @@ func _reset_player():
 		if level_child is IntrusionNode:
 			level_child.occupying_character = null
 
-func _reset_level():
+func reset_level():
 	_reset_player()
 
 func game_input(event):

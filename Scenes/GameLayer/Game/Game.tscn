@@ -1,0 +1,85 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Assets/Originals/Background.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_0.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/GameLayer/Game/Game.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_0.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_1.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_3.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_4.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_2.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_5.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_0/Level_0_6.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_End/LevelYouWon.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_5.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_3.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_6.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_1/Level_1_4.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_2/Level_2_0.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/GameLayer/IntrusionLevels/Chapter_2/Level_2_1.tscn" type="PackedScene" id=21]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.015, 0.015 )
+motion_mirroring = Vector2( 1, 1 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Level_0_0" parent="." instance=ExtResource( 2 )]
+starting_unlocks = 2
+
+[node name="Level_0_1" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1152, 0 )
+
+[node name="Level_0_2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2304, 0 )
+
+[node name="Level_0_3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3456, 0 )
+
+[node name="Level_0_4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 4608, 0 )
+
+[node name="Level_0_5" parent="." instance=ExtResource( 13 )]
+position = Vector2( 5760, 0 )
+
+[node name="Level_0_6" parent="." instance=ExtResource( 14 )]
+position = Vector2( 6912, 0 )
+
+[node name="Level_1_0" parent="." instance=ExtResource( 7 )]
+position = Vector2( 0, 864 )
+
+[node name="Level_1_1" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1152, 864 )
+
+[node name="Level_1_2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 2304, 864 )
+
+[node name="Level_1_3" parent="." instance=ExtResource( 17 )]
+position = Vector2( 3456, 864 )
+
+[node name="Level_1_4" parent="." instance=ExtResource( 19 )]
+position = Vector2( 4608, 864 )
+
+[node name="Level_1_5" parent="." instance=ExtResource( 16 )]
+position = Vector2( 5760, 864 )
+
+[node name="Level_1_6" parent="." instance=ExtResource( 18 )]
+position = Vector2( 6912, 864 )
+
+[node name="Level_2_0" parent="." instance=ExtResource( 20 )]
+position = Vector2( 0, 1824 )
+
+[node name="Level_2_1" parent="." instance=ExtResource( 21 )]
+position = Vector2( 1184, 1824 )
+
+[node name="LevelYouWon" parent="." instance=ExtResource( 15 )]
+position = Vector2( 0, 2816 )

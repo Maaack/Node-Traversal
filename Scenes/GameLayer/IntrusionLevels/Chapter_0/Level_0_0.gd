@@ -4,7 +4,10 @@ extends IntrusionLevel
 
 class_name ChapterZeroLevel
 
+const FOCUS_TOOL_ANIMATION = 'Focus'
+
 onready var unlocks_count_node = $ToolsNode/UnlocksCounter/UnlocksCount
+onready var animation_node = $ToolsNode/AnimationPlayer
 
 export(int) var starting_unlocks : int = 1 setget set_starting_unlocks
 
@@ -39,9 +42,14 @@ func _reset_locks():
 	current_unlocks = starting_unlocks
 	_update_tool_counts()
 
-func _reset_level():
+func _reset_animations():
+	if is_instance_valid(animation_node):
+		animation_node.current_animation = FOCUS_TOOL_ANIMATION
+
+func reset_level():
 	_reset_locks()
-	._reset_level()
+	_reset_animations()
+	.reset_level()
 
 func set_starting_unlocks(value:int):
 	starting_unlocks = value

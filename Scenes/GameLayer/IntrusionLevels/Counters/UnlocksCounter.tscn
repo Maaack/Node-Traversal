@@ -1,10 +1,16 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scenes/Themes/StandardFontTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/Themes/ShadowFontTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Originals/NodeCircle.png" type="Texture" id=2]
 
 [node name="UnlocksCounter" type="Node2D"]
 position = Vector2( -80, 8 )
+
+[node name="Shadow" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 0.2 )
+position = Vector2( 3, 3 )
+scale = Vector2( 0.55, 0.55 )
+texture = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0, 0.952941, 1, 1 )

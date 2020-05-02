@@ -6,13 +6,13 @@ class_name IntrusionPath
 
 const ORIENTATION_VECTOR = Vector2(0.0, -1.0)
 const ORIGINAL_SCALE = Vector2(1.0, 1.0)
-const LENGTH_OFFSET = -128
 
 onready var sprite_node = $Sprite
 
 export(NodePath) var target_a_path setget set_target_a_path
 export(NodePath) var target_b_path setget set_target_b_path
 export(Resource) var occupying_character setget set_occupying_character
+export(float) var line_length_offset = -128
 
 var target_a: IntrusionNode
 var target_b: IntrusionNode
@@ -61,7 +61,7 @@ func update_line_position_and_scale() -> void:
 	original_size = sprite_node.texture.get_size()
 	original_length = max(original_size.x, original_size.y)
 	if original_length != null:
-		sprite_node.scale.y = ORIGINAL_SCALE.y * ((delta_vector.length() + LENGTH_OFFSET) / original_length)
+		sprite_node.scale.y = ORIGINAL_SCALE.y * ((delta_vector.length() + line_length_offset) / original_length)
 
 func disconnect_nodes() -> void:
 	if target_a == null or target_b == null:
