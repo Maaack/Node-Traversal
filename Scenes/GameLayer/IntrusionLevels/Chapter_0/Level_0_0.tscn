@@ -13,7 +13,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "Focus"
-length = 2.0
+length = 3.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
@@ -21,7 +21,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1.5, 2 ),
+"times": PoolRealArray( 0, 3, 3.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 624, 160 ), Vector2( 624, 160 ), Vector2( 1000, 24 ) ]
@@ -33,7 +33,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1.5, 2 ),
+"times": PoolRealArray( 0, 3, 3.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 2, 2 ), Vector2( 2, 2 ), Vector2( 1, 1 ) ]
