@@ -71,42 +71,46 @@ position = Vector2( 628.25, 472 )
 target_a_path = NodePath("../../Level_1_2/OpenNode2")
 target_b_path = NodePath("../RedNode2")
 
-[node name="IntrusionPath8" parent="." index="22" instance=ExtResource( 2 )]
+[node name="IntrusionPath8" parent="." index="20" instance=ExtResource( 2 )]
 position = Vector2( 188, 214 )
 target_a_path = NodePath("../StartingNode")
 target_b_path = NodePath("../OpenNode3")
 
-[node name="IntrusionPath9" parent="." index="23" instance=ExtResource( 2 )]
+[node name="IntrusionPath9" parent="." index="21" instance=ExtResource( 2 )]
 position = Vector2( 400, 214 )
 target_a_path = NodePath("../RedNode")
 target_b_path = NodePath("../OpenNode5")
 
-[node name="IntrusionPath10" parent="." index="24" instance=ExtResource( 2 )]
+[node name="IntrusionPath10" parent="." index="22" instance=ExtResource( 2 )]
 position = Vector2( 744, 214 )
 target_a_path = NodePath("../RedNode4")
 target_b_path = NodePath("../RedNode3")
 
-[node name="IntrusionPath11" parent="." index="25" instance=ExtResource( 2 )]
+[node name="IntrusionPath11" parent="." index="23" instance=ExtResource( 2 )]
 position = Vector2( 744.25, 386 )
 target_a_path = NodePath("../RedNode2")
 target_b_path = NodePath("../RedNode3")
 
-[node name="IntrusionPath12" parent="." index="26" instance=ExtResource( 2 )]
+[node name="IntrusionPath12" parent="." index="24" instance=ExtResource( 2 )]
 position = Vector2( 840, 300 )
 target_a_path = NodePath("../RedNode3")
 target_b_path = NodePath("../DestinationNode")
 
-[node name="IntrusionPath13" parent="." index="27" instance=ExtResource( 2 )]
+[node name="IntrusionPath13" parent="." index="25" instance=ExtResource( 2 )]
 position = Vector2( 628, 214 )
 target_a_path = NodePath("../OpenNode5")
 target_b_path = NodePath("../RedNode3")
 
-[node name="IntrusionPath14" parent="." index="28" instance=ExtResource( 2 )]
+[node name="IntrusionPath14" parent="." index="26" instance=ExtResource( 2 )]
 position = Vector2( 628, 214 )
 target_a_path = NodePath("../OpenNode4")
 target_b_path = NodePath("../RedNode4")
 
-[node name="IntrusionPath15" parent="." index="29" instance=ExtResource( 2 )]
+[node name="IntrusionPath15" parent="." index="27" instance=ExtResource( 2 )]
 position = Vector2( 628.25, 386 )
 target_a_path = NodePath("../OpenNode4")
 target_b_path = NodePath("../RedNode2")
+
+[node name="ToolsNode" parent="." index="29"]
+position = Vector2( 1000, 24 )
+scale = Vector2( 1, 1 )

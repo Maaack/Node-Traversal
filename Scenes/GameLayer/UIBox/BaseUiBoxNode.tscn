@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/GameLayer/UIBox/BaseUIBox.tscn" type="PackedScene" id=1]
+
+[node name="BaseUiBoxNode" type="Node2D"]
+
+[node name="BaseUIBox" parent="." instance=ExtResource( 1 )]
+margin_left = 0.0641098
+margin_top = -0.201504
+margin_right = 80.0641
+margin_bottom = 79.7985

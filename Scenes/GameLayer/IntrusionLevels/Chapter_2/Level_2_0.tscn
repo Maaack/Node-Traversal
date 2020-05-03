@@ -106,5 +106,18 @@ position = Vector2( 512, 132 )
 target_a_path = NodePath("../RedNode2")
 target_b_path = NodePath("../OpenNode3")
 
+[node name="BaseUiBoxNode" parent="." index="27"]
+position = Vector2( 1032, -8 )
+scale = Vector2( 1e-05, 1e-05 )
+
+[node name="BaseUIBox" parent="BaseUiBoxNode" index="0"]
+margin_bottom = 296.0
+
+[node name="ToolsNode" parent="." index="28"]
+position = Vector2( 1000, 24 )
+scale = Vector2( 1, 1 )
+
 [node name="YellowUnlocksCounter" parent="ToolsNode" index="2" instance=ExtResource( 2 )]
 position = Vector2( -80, 104 )
+
+[editable path="BaseUiBoxNode"]
