@@ -4,6 +4,7 @@ extends Control
 onready var camera_node = $Camera2D
 onready var game_node = $Game
 onready var menu_node = $MainMenu
+onready var music_audio_node = $MusicAudio
 
 export(int, 0, 1024) var starting_level_index = 0
 
@@ -30,6 +31,8 @@ func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		camera_node.position = Vector2(0,0)
 		menu_node.show()
+	if event.is_action_pressed("game_music_toggle"):
+		music_audio_node.playing = !(music_audio_node.playing)
 	current_level_node.game_input(event)
 
 func _on_Level_destination_reached(level:IntrusionLevel):

@@ -149,8 +149,7 @@ __meta__ = {
 }
 
 [node name="BaseUiBoxNode" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1032, -8 )
-scale = Vector2( 1e-05, 1e-05 )
+position = Vector2( 640, 128 )
 
 [node name="BaseUIBox" parent="BaseUiBoxNode" index="0"]
 anchor_left = 1.0
@@ -161,7 +160,8 @@ margin_right = 0.0
 margin_bottom = 200.0
 
 [node name="ToolsNode" type="Node2D" parent="."]
-position = Vector2( 1000, 24 )
+position = Vector2( 624, 160 )
+scale = Vector2( 2, 2 )
 
 [node name="UnlocksCounter" parent="ToolsNode" instance=ExtResource( 1 )]
 

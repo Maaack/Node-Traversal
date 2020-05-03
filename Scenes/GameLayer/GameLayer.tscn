@@ -23,7 +23,7 @@ smoothing_enabled = true
 
 [node name="MainMenu" parent="." instance=ExtResource( 3 )]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="MusicAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -25.0
 autoplay = true

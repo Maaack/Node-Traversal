@@ -44,16 +44,8 @@ position = Vector2( 820, 386 )
 target_a_path = NodePath("../OpenNode2")
 target_b_path = NodePath("../DestinationNode")
 
-[node name="BaseUiBoxNode" parent="." index="13"]
-position = Vector2( 640, 128 )
-scale = Vector2( 1, 1 )
-
 [node name="BaseUIBox" parent="BaseUiBoxNode" index="0"]
 margin_bottom = 200.0
-
-[node name="ToolsNode" parent="." index="14"]
-position = Vector2( 624, 160 )
-scale = Vector2( 2, 2 )
 
 [node name="RedUnlocksCounter" parent="ToolsNode" index="1" instance=ExtResource( 3 )]
 position = Vector2( -80, 56 )

@@ -38,7 +38,7 @@ zoom = Vector2( 2, 2 )
 [node name="InstructionsNode" parent="." index="7"]
 visible = false
 
-[node name="ToolsNode" parent="." index="8"]
+[node name="BaseUiBoxNode" parent="." index="8"]
 visible = false
 
 [node name="StartingNode2" parent="." index="9" instance=ExtResource( 4 )]
@@ -204,3 +204,8 @@ target_b_path = NodePath("../OpenNode18")
 position = Vector2( 1824, 892 )
 target_a_path = NodePath("../OpenNode18")
 target_b_path = NodePath("../OpenNode19")
+
+[node name="ToolsNode" parent="." index="51"]
+visible = false
+
+[editable path="BaseUiBoxNode"]

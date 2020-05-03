@@ -268,12 +268,4 @@ line_length_offset = -64.0
 [node name="DestinationPath" parent="." index="50"]
 position = Vector2( 1080, 300 )
 
-[node name="BaseUiBoxNode" parent="." index="53"]
-position = Vector2( 640, 128 )
-scale = Vector2( 1, 1 )
-
-[node name="ToolsNode" parent="." index="54"]
-position = Vector2( 624, 160 )
-scale = Vector2( 2, 2 )
-
 [editable path="BaseUiBoxNode"]
