@@ -25,7 +25,7 @@ smoothing_enabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -20.0
+volume_db = -25.0
 autoplay = true
 [connection signal="resized" from="." to="." method="_on_GameLayer_resized"]
 [connection signal="start_level" from="MainMenu" to="." method="_on_MainMenu_start_level"]

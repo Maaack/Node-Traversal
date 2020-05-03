@@ -35,7 +35,6 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="Level_0_0" parent="." instance=ExtResource( 2 )]
-starting_unlocks = 2
 
 [node name="Level_0_1" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1152, 0 )
