@@ -30,6 +30,7 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		camera_node.position = Vector2(0,0)
+		camera_node.zoom = Vector2(1,1)
 		menu_node.show()
 	if event.is_action_pressed("game_music_toggle"):
 		music_audio_node.playing = !(music_audio_node.playing)
