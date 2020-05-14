@@ -12,6 +12,12 @@ License: [CC0 1.0 Universal (CC0 1.0)
 Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/)
 
 ## Art Assets
+### Fonts
+#### All
+Author: [Ray Larabie](http://typodermicfonts.com)  
+Source: [Adobe](https://fonts.adobe.com/fonts/neuropol)  
+License: [Free-ish](./Assets/fonts/neuropol-x-free/read-this.html)
+
 ### Sprites and Textures
 #### All
 Author: [Maaack](https://github.com/Maaack)  
